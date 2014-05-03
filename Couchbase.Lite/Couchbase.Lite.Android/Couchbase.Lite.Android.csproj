@@ -2,50 +2,110 @@
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
-    <ProjectGuid>{18AE9E93-AF27-47A0-921C-1846941643B6}</ProjectGuid>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{618DF8DC-1048-4BF5-A45B-39C6C3CFC8AF}</ProjectGuid>
+    <ProjectTypeGuids>{EFBA0AD7-5A72-4C68-AF49-83D382785DCF};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
-    <RootNamespace>Couchbase.Lite</RootNamespace>
-    <AssemblyName>Couchbase.Lite</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <RootNamespace>Couchbase.Lite.Android</RootNamespace>
+    <MonoAndroidAssetsPrefix>Assets</MonoAndroidAssetsPrefix>
+    <MonoAndroidResourcePrefix>Resources</MonoAndroidResourcePrefix>
+    <AndroidResgenClass>Resource</AndroidResgenClass>
+    <AndroidResgenFile>Resources\Resource.designer.cs</AndroidResgenFile>
+    <AndroidUseLatestPlatformSdk>True</AndroidUseLatestPlatformSdk>
+    <AssemblyName>Couchbase.Lite.Android</AssemblyName>
+    <TargetFrameworkVersion>v4.0.3</TargetFrameworkVersion>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>bin\Debug</OutputPath>
-    <DefineConstants>DEBUG;TRACE;</DefineConstants>
+    <DefineConstants>DEBUG;__MOBILE__;__ANDROID__;</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <AndroidLinkMode>None</AndroidLinkMode>
     <ConsolePause>false</ConsolePause>
-    <PlatformTarget>x86</PlatformTarget>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>full</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release</OutputPath>
+    <DefineConstants>__MOBILE__;__ANDROID__;</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <ConsolePause>false</ConsolePause>
-    <PlatformTarget>x86</PlatformTarget>
+    <AndroidUseSharedRuntime>false</AndroidUseSharedRuntime>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
-  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
-    <Folder Include="Sharpen\" />
-    <Folder Include="Util\" />
-    <Folder Include="Extensions\" />
-    <Folder Include="Exceptions\" />
-    <Folder Include="Store\" />
-    <Folder Include="Revisions\" />
-    <Folder Include="Documents\" />
-    <Folder Include="Query\" />
-    <Folder Include="Manager\" />
-    <Folder Include="Replication\" />
-    <Folder Include="Auth\" />
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="Mono.Android" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="Mono.Data.Sqlite" />
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>lib\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting">
+      <HintPath>lib\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib">
+      <HintPath>lib\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Services" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Resources\Resource.designer.cs" />
+    <Compile Include="Attachment.cs" />
+    <Compile Include="Database.cs" />
+    <Compile Include="Document.cs" />
+    <Compile Include="Manager.cs" />
+    <Compile Include="Query.cs" />
+    <Compile Include="Replication.cs" />
+    <Compile Include="Revision.cs" />
+    <Compile Include="View.cs" />
+    <Compile Include="Auth\Authorizer.cs" />
+    <Compile Include="Auth\FacebookAuthorizer.cs" />
+    <Compile Include="Auth\PersonaAuthorizer.cs" />
+    <Compile Include="Documents\AttachmentInternal.cs" />
+    <Compile Include="Documents\Body.cs" />
+    <Compile Include="Documents\DocumentChange.cs" />
+    <Compile Include="Documents\IValidationContext.cs" />
+    <Compile Include="Documents\TDContentOptions.cs" />
+    <Compile Include="Documents\ValidationContext.cs" />
+    <Compile Include="Exceptions\CouchbaseLiteException.cs" />
+    <Compile Include="Extensions\SqliteExtensions.cs" />
+    <Compile Include="Extensions\StreamExtensions.cs" />
+    <Compile Include="Manager\ManagerOptions.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Query\LiveQuery.cs" />
+    <Compile Include="Query\QueryCompletedEventArgs.cs" />
+    <Compile Include="Query\QueryEnumerator.cs" />
+    <Compile Include="Query\QueryOptions.cs" />
+    <Compile Include="Query\QueryRow.cs" />
+    <Compile Include="Replication\BatchProcessor.cs" />
+    <Compile Include="Replication\Batcher.cs" />
+    <Compile Include="Replication\ChangeTracker.cs" />
+    <Compile Include="Replication\ChangeTrackerBackoff.cs" />
+    <Compile Include="Replication\ChangeTrackerClient.cs" />
+    <Compile Include="Replication\CouchbaseLiteHttpClientFactory.cs" />
+    <Compile Include="Replication\HttpResponseException.cs" />
+    <Compile Include="Replication\MultipartDocumentReader.cs" />
+    <Compile Include="Replication\MultipartReader.cs" />
+    <Compile Include="Replication\MultipartReaderDelegate.cs" />
+    <Compile Include="Replication\PulledRevision.cs" />
+    <Compile Include="Replication\Puller.cs" />
+    <Compile Include="Replication\Pusher.cs" />
+    <Compile Include="Replication\ScheduledFuture.cs" />
+    <Compile Include="Revisions\ChangesOptions.cs" />
+    <Compile Include="Revisions\RevisionInternal.cs" />
+    <Compile Include="Revisions\RevisionList.cs" />
+    <Compile Include="Revisions\SavedRevision.cs" />
+    <Compile Include="Revisions\UnsavedRevision.cs" />
     <Compile Include="Sharpen\AList.cs" />
     <Compile Include="Sharpen\AbstractCollection.cs" />
     <Compile Include="Sharpen\AbstractList.cs" />
@@ -72,6 +132,7 @@
     <Compile Include="Sharpen\Channels.cs" />
     <Compile Include="Sharpen\CharBuffer.cs" />
     <Compile Include="Sharpen\CharSequence.cs" />
+    <Compile Include="Sharpen\CharUtils.cs" />
     <Compile Include="Sharpen\CharsetDecoder.cs" />
     <Compile Include="Sharpen\CharsetEncoder.cs" />
     <Compile Include="Sharpen\CodingErrorAction.cs" />
@@ -145,11 +206,14 @@
     <Compile Include="Sharpen\Runnable.cs" />
     <Compile Include="Sharpen\Runtime.cs" />
     <Compile Include="Sharpen\SSLContext.cs" />
+    <Compile Include="Sharpen\ScheduledExecutorService.cs" />
     <Compile Include="Sharpen\ScheduledThreadPoolExecutor.cs" />
     <Compile Include="Sharpen\SimpleDateFormat.cs" />
     <Compile Include="Sharpen\SingletonList.cs" />
     <Compile Include="Sharpen\SoftReference.cs" />
     <Compile Include="Sharpen\StackOverflowError.cs" />
+    <Compile Include="Sharpen\String.cs" />
+    <Compile Include="Sharpen\StringTokenizer.cs" />
     <Compile Include="Sharpen\SynchronizedList.cs" />
     <Compile Include="Sharpen\Thread.cs" />
     <Compile Include="Sharpen\ThreadFactory.cs" />
@@ -158,120 +222,47 @@
     <Compile Include="Sharpen\TreeSet.cs" />
     <Compile Include="Sharpen\TrustManager.cs" />
     <Compile Include="Sharpen\URLEncoder.cs" />
+    <Compile Include="Sharpen\Uri.cs" />
     <Compile Include="Sharpen\WeakReference.cs" />
     <Compile Include="Sharpen\WrappedSystemStream.cs" />
     <Compile Include="Sharpen\X509Certificate.cs" />
     <Compile Include="Sharpen\X509TrustManager.cs" />
-    <Compile Include="Sharpen\Uri.cs" />
-    <Compile Include="Sharpen\CharUtils.cs" />
-    <Compile Include="Util\URIUtils.cs" />
-    <Compile Include="Attachment.cs" />
-    <Compile Include="Database.cs" />
-    <Compile Include="Document.cs" />
-    <Compile Include="Manager.cs" />
-    <Compile Include="Query.cs" />
-    <Compile Include="Replication.cs" />
-    <Compile Include="Revision.cs" />
-    <Compile Include="View.cs" />
-    <Compile Include="Extensions\StreamExtensions.cs" />
-    <Compile Include="Exceptions\CouchbaseLiteException.cs" />
-    <Compile Include="Sharpen\String.cs" />
-    <Compile Include="Sharpen\StringTokenizer.cs" />
-    <Compile Include="Util\ObjectWriter.cs" />
-    <Compile Include="Util\Log.cs" />
-    <Compile Include="Util\LoggerFactory.cs" />
-    <Compile Include="Util\SystemLogger.cs" />
-    <Compile Include="Util\ILogger.cs" />
-    <Compile Include="Util\Misc.cs" />
     <Compile Include="Store\BlobKey.cs" />
     <Compile Include="Store\BlobStore.cs" />
     <Compile Include="Store\BlobStoreWriter.cs" />
-    <Compile Include="Revisions\RevisionList.cs" />
-    <Compile Include="Revisions\SavedRevision.cs" />
-    <Compile Include="Revisions\UnsavedRevision.cs" />
-    <Compile Include="Revisions\RevisionInternal.cs" />
-    <Compile Include="Documents\AttachmentInternal.cs" />
-    <Compile Include="Documents\Body.cs" />
+    <Compile Include="Store\ConflictResolutionStrategy.cs" />
+    <Compile Include="Store\ContentValues.cs" />
+    <Compile Include="Store\CouchbaseSqliteCollationFunctions.cs" />
+    <Compile Include="Store\Cursor.cs" />
+    <Compile Include="Store\JsonCollator.cs" />
+    <Compile Include="Store\MonoSQLiteStorageEngine.cs" />
     <Compile Include="Store\SQLException.cs" />
     <Compile Include="Store\SQLiteStorageEngine.cs" />
     <Compile Include="Store\SQLiteStorageEngineFactory.cs" />
-    <Compile Include="Store\Cursor.cs" />
-    <Compile Include="Store\MonoSQLiteStorageEngine.cs" />
-    <Compile Include="Store\ContentValues.cs" />
     <Compile Include="Store\Status.cs" />
-    <Compile Include="Util\LruCache.cs" />
-    <Compile Include="Util\FileDirUtils.cs" />
-    <Compile Include="Documents\TDContentOptions.cs" />
-    <Compile Include="Documents\IValidationContext.cs" />
-    <Compile Include="Documents\ValidationContext.cs" />
-    <Compile Include="Documents\DocumentChange.cs" />
-    <Compile Include="Sharpen\ScheduledExecutorService.cs" />
-    <Compile Include="Query\QueryEnumerator.cs" />
-    <Compile Include="Query\QueryRow.cs" />
-    <Compile Include="Query\QueryOptions.cs" />
-    <Compile Include="Query\QueryCompletedEventArgs.cs" />
-    <Compile Include="Query\LiveQuery.cs" />
-    <Compile Include="Manager\ManagerOptions.cs" />
-    <Compile Include="Auth\Authorizer.cs" />
-    <Compile Include="Auth\FacebookAuthorizer.cs" />
-    <Compile Include="Auth\PersonaAuthorizer.cs" />
-    <Compile Include="Replication\Batcher.cs" />
-    <Compile Include="Replication\BatchProcessor.cs" />
-    <Compile Include="Replication\ScheduledFuture.cs" />
-    <Compile Include="Replication\CouchbaseLiteHttpClientFactory.cs" />
-    <Compile Include="Util\RemoteRequestCompletionBlock.cs" />
-    <Compile Include="Replication\MultipartReaderDelegate.cs" />
-    <Compile Include="Util\Range.cs" />
-    <Compile Include="Util\IHttpClientFactory.cs" />
-    <Compile Include="Replication\Puller.cs" />
-    <Compile Include="Replication\Pusher.cs" />
-    <Compile Include="Replication\ChangeTracker.cs" />
-    <Compile Include="Replication\ChangeTrackerBackoff.cs" />
-    <Compile Include="Replication\ChangeTrackerClient.cs" />
-    <Compile Include="Util\ExtensionMethods.cs" />
     <Compile Include="Util\DefaultAuthHandler.cs" />
+    <Compile Include="Util\ExtensionMethods.cs" />
+    <Compile Include="Util\FileDirUtils.cs" />
+    <Compile Include="Util\IHttpClientFactory.cs" />
+    <Compile Include="Util\ILogger.cs" />
+    <Compile Include="Util\Log.cs" />
+    <Compile Include="Util\LoggerFactory.cs" />
+    <Compile Include="Util\LruCache.cs" />
+    <Compile Include="Util\Misc.cs" />
+    <Compile Include="Util\ObjectWriter.cs" />
+    <Compile Include="Util\Range.cs" />
+    <Compile Include="Util\RemoteRequestCompletionBlock.cs" />
     <Compile Include="Util\SequenceMap.cs" />
-    <Compile Include="Replication\PulledRevision.cs" />
-    <Compile Include="Revisions\ChangesOptions.cs" />
-    <Compile Include="Replication\MultipartDocumentReader.cs" />
-    <Compile Include="Replication\MultipartReader.cs" />
-    <Compile Include="Store\ConflictResolutionStrategy.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Extensions\SqliteExtensions.cs" />
-    <Compile Include="Store\CouchbaseSqliteCollationFunctions.cs" />
     <Compile Include="Util\StringUtils.cs" />
-    <Compile Include="Store\JsonCollator.cs" />
-    <Compile Include="Replication\HttpResponseException.cs" />
+    <Compile Include="Util\SystemLogger.cs" />
+    <Compile Include="Util\URIUtils.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="System" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Net.Http" />
-    <Reference Include="System.Data.Linq" />
-    <Reference Include="Mono.Data.Sqlite" />
-    <Reference Include="ICSharpCode.SharpZipLib">
-      <HintPath>..\packages\ICSharpCode.SharpZipLib.dll.0.85.4.369\lib\net20\ICSharpCode.SharpZipLib.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Net.Http.WebRequest" />
-    <Reference Include="System.Net" />
-    <Reference Include="System.Net.Http.Formatting">
-      <HintPath>..\lib\System.Net.Http.Formatting.dll</HintPath>
-    </Reference>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>..\lib\Newtonsoft.Json.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Web" />
-  </ItemGroup>
-  <ProjectExtensions>
-    <MonoDevelop>
-      <Properties>
-        <Policies>
-          <TextStylePolicy FileWidth="120" NoTabsAfterNonTabs="True" inheritsSet="VisualStudio" inheritsScope="text/plain" scope="text/plain" />
-        </Policies>
-      </Properties>
-    </MonoDevelop>
-  </ProjectExtensions>
-  <ItemGroup>
+    <None Include="Resources\AboutResources.txt" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\values\Strings.xml" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
 </Project>
