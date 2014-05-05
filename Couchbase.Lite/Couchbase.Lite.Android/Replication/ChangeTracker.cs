@@ -273,24 +273,25 @@ namespace Couchbase.Lite.Replicator
 
 				AddRequestHeaders(Request);
 
+				// JOSH
 				// if the URL contains user info AND if this a DefaultHttpClient
                 // then preemptively set/update the auth credentials
-				if (url.UserInfo != null)
-				{
-					Log.V(Tag, "url.getUserInfo(): " + url.GetUserInfo());
-
-                    var credentials = Request.ToCredentialsFromUri();
-                    if (credentials != null)
-					{
-                        var handler = client.HttpHandler;
-                        if (handler.Credentials == null || !handler.Credentials.Equals(credentials))
-                            client.HttpHandler.Credentials = credentials;
-					}
-					else
-					{
-                        Log.W(Tag, this + ": ChangeTracker Unable to parse user info, not setting credentials");
-					}
-				}
+//				if (url.UserInfo != null)
+//				{
+//					Log.V(Tag, "url.getUserInfo(): " + url.GetUserInfo());
+//
+//                    var credentials = Request.ToCredentialsFromUri();
+//                    if (credentials != null)
+//					{
+//                        var handler = client.HttpHandler;
+//                        if (handler.Credentials == null || !handler.Credentials.Equals(credentials))
+//                            client.HttpHandler.Credentials = credentials;
+//					}
+//					else
+//					{
+//                        Log.W(Tag, this + ": ChangeTracker Unable to parse user info, not setting credentials");
+//					}
+//				}
 
 				try
 				{
