@@ -40,6 +40,7 @@ The upstream Java project is:
 The current codebase is based on commit:
 	03895431fe71ed9ccd74c9cbc11ad88c8ae65602
 
+Android Library
+===============
 
-
-
+Port modified to be used in Android Projects. A Couchbase Lite for Xam.Android sample can be found here: https://github.com/SotoiGhost/CouchXamAndroidSample
