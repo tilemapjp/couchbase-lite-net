@@ -114,6 +114,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />
+    <Folder Include="Util\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
@@ -123,6 +124,9 @@
     <Compile Include="Main.cs" />
     <Compile Include="UnitTestAppDelegate.cs" />
     <Compile Include="TestsSample.cs" />
+    <Compile Include="LiteTestCase.cs" />
+    <Compile Include="ApiTest.cs" />
+    <Compile Include="Util\ExtensionMethods.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

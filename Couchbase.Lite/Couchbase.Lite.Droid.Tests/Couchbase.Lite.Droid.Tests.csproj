@@ -27,6 +27,7 @@
     <WarningLevel>4</WarningLevel>
     <AndroidLinkMode>None</AndroidLinkMode>
     <ConsolePause>false</ConsolePause>
+    <EmbedAssembliesIntoApk>True</EmbedAssembliesIntoApk>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <Optimize>true</Optimize>
@@ -56,6 +57,15 @@
     <Compile Include="..\..\..\..\..\Projects\MapApp\couchbase-lite-net\Couchbase.Lite\Couchbase.Lite.Droid.Tests\TestsSample.cs">
       <Link>TestsSample.cs</Link>
     </Compile>
+    <Compile Include="..\Couchbase.Lite.Touch.Tests\LiteTestCase.cs">
+      <Link>LiteTestCase.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Touch.Tests\ApiTest.cs">
+      <Link>ApiTest.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Touch.Tests\Util\ExtensionMethods.cs">
+      <Link>Util\ExtensionMethods.cs</Link>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -71,5 +81,8 @@
       <Project>{618DF8DC-1048-4BF5-A45B-39C6C3CFC8AF}</Project>
       <Name>Couchbase.Lite.Droid</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Util\" />
   </ItemGroup>
 </Project>
