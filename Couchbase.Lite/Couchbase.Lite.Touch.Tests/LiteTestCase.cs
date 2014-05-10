@@ -58,7 +58,7 @@ using System.Net;
 
 namespace Couchbase.Lite
 {
-    [TestFixture]
+	//[TestFixture]
 	public abstract class LiteTestCase
 	{
 		public const string Tag = "LiteTestCase";
@@ -72,8 +72,8 @@ namespace Couchbase.Lite
 		protected internal string DefaultTestDb = "cblitetest";
 
 		/// <exception cref="System.Exception"></exception>
-        [TestFixtureSetUp]
-		protected void SetUp()
+		//[TestFixtureSetUp]
+		protected virtual void SetUp()
 		{
 			//Trace.Listeners.Add(new ConsoleTraceListener());
 			Log.V(Tag, "setUp");
@@ -242,8 +242,8 @@ namespace Couchbase.Lite
 		}
 
 		/// <exception cref="System.Exception"></exception>
-        [TestFixtureTearDown]
-        protected void TearDown()
+		//[TestFixtureTearDown]
+		protected virtual void TearDown()
 		{
 			Log.V(Tag, "tearDown");
 			StopDatabse();

@@ -66,6 +66,12 @@
     <Compile Include="..\Couchbase.Lite.Touch.Tests\Util\ExtensionMethods.cs">
       <Link>Util\ExtensionMethods.cs</Link>
     </Compile>
+    <Compile Include="..\Couchbase.Lite.Touch.Tests\CollationTest.cs">
+      <Link>CollationTest.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Touch.Tests\CRUDOperationsTest.cs">
+      <Link>CRUDOperationsTest.cs</Link>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />

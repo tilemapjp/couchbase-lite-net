@@ -57,7 +57,7 @@
     </IpaPackageName>
     <MtouchI18n>
     </MtouchI18n>
-    <MtouchArch>ARMv7</MtouchArch>
+    <MtouchArch>ARMv7, ARMv7s</MtouchArch>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
     <DebugType>full</DebugType>
@@ -127,6 +127,8 @@
     <Compile Include="LiteTestCase.cs" />
     <Compile Include="ApiTest.cs" />
     <Compile Include="Util\ExtensionMethods.cs" />
+    <Compile Include="CollationTest.cs" />
+    <Compile Include="CRUDOperationsTest.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

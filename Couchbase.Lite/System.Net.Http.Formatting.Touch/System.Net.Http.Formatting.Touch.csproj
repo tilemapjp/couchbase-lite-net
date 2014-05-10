@@ -6,9 +6,9 @@
     <ProjectGuid>{43A1E74A-B25E-4386-B800-4E181837ADDC}</ProjectGuid>
     <ProjectTypeGuids>{6BC8ED88-2882-458C-8E55-DFD12B67127B};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
-    <RootNamespace>System.Net.Http.Formatting.Touch</RootNamespace>
+    <RootNamespace>System.Net.Http.Formatting</RootNamespace>
     <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
-    <AssemblyName>System.Net.Http.Formatting.Touch</AssemblyName>
+    <AssemblyName>System.Net.Http.Formatting</AssemblyName>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>

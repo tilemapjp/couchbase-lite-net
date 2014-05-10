@@ -59,8 +59,22 @@ namespace Couchbase.Lite
 {
 	/// <summary>Created by andrey on 12/3/13.</summary>
 	/// <remarks>Created by andrey on 12/3/13.</remarks>
+	[TestFixture]
     public class ApiTest : LiteTestCase
 	{
+		[TestFixtureSetUp]
+		protected override void SetUp ()
+		{
+			base.SetUp ();
+		}
+
+		[TestFixtureTearDown]
+		protected override void TearDown ()
+		{
+			base.TearDown ();
+		}
+
+
         public static Task CreateDocumentsAsync(Database db, int n)
 		{
             return db.RunAsync((database)=>

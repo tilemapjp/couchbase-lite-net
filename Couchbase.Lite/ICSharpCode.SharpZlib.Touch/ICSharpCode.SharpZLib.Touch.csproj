@@ -6,9 +6,9 @@
     <ProjectGuid>{28D0FFBC-5A7D-46DF-B966-453EE2ECCCF7}</ProjectGuid>
     <ProjectTypeGuids>{6BC8ED88-2882-458C-8E55-DFD12B67127B};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
-    <RootNamespace>ICSharpCode.SharpZlib.Touch</RootNamespace>
+    <RootNamespace>ICSharpCode.SharpZlib</RootNamespace>
     <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
-    <AssemblyName>ICSharpCode.SharpZlib.Touch</AssemblyName>
+    <AssemblyName>ICSharpCode.SharpZlib</AssemblyName>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
