@@ -881,7 +881,8 @@ PRAGMA user_version = 3;";
             return string.Format("_local/{0}", documentId);
         }
 
-        private RevisionInternal PutLocalRevision(RevisionInternal revision, string prevRevID)
+		//private 
+		internal RevisionInternal PutLocalRevision(RevisionInternal revision, string prevRevID)
         {
             var docID = revision.GetDocId();
             if (!docID.StartsWith ("_local/", StringComparison.InvariantCultureIgnoreCase))

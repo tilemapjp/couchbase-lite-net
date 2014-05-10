@@ -260,6 +260,9 @@
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
   <ItemGroup>
+    <Folder Include="src\" />
+  </ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="..\System.Net.Http.Formatting.Droid\System.Net.Http.Formatting.Droid.csproj">
       <Project>{938B64CC-9C6E-44A1-A99A-15FC1339DCBB}</Project>
       <Name>System.Net.Http.Formatting.Droid</Name>
@@ -268,8 +271,5 @@
       <Project>{1960FCA0-6FBF-4915-B3B3-9887203CF399}</Project>
       <Name>ICSharpCode.SharpZLib.Droid</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="src\" />
   </ItemGroup>
 </Project>

@@ -70,9 +70,9 @@ namespace Couchbase.Lite
 
         const string HttpErrorDomain = "CBLHTTP";
 
-        const string DatabaseSuffixOld = ".touchdb";
+		internal const string DatabaseSuffixOld = ".touchdb";
 
-        const string DatabaseSuffix = ".cblite";
+		internal const string DatabaseSuffix = ".cblite";
 
         const string IllegalCharacters = "[^a-z]{1,}[^a-z0-9_$()/+-]*$";
 

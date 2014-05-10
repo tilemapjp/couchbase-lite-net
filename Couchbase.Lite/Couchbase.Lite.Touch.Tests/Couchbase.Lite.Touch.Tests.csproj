@@ -129,6 +129,8 @@
     <Compile Include="Util\ExtensionMethods.cs" />
     <Compile Include="CollationTest.cs" />
     <Compile Include="CRUDOperationsTest.cs" />
+    <Compile Include="LocalDocsTest.cs" />
+    <Compile Include="ManagerTest.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
