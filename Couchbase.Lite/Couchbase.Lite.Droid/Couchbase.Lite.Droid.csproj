@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{618DF8DC-1048-4BF5-A45B-39C6C3CFC8AF}</ProjectGuid>
+    <ProjectTypeGuids>{EFBA0AD7-5A72-4C68-AF49-83D382785DCF};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Couchbase.Lite</RootNamespace>
+    <MonoAndroidAssetsPrefix>Assets</MonoAndroidAssetsPrefix>
+    <MonoAndroidResourcePrefix>Resources</MonoAndroidResourcePrefix>
+    <AndroidResgenClass>Resource</AndroidResgenClass>
+    <AndroidResgenFile>Resources\Resource.designer.cs</AndroidResgenFile>
+    <AndroidUseLatestPlatformSdk>True</AndroidUseLatestPlatformSdk>
+    <AssemblyName>Couchbase.Lite</AssemblyName>
+    <TargetFrameworkVersion>v4.4</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;__MOBILE__;__ANDROID__;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AndroidLinkMode>None</AndroidLinkMode>
+    <ConsolePause>false</ConsolePause>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <DefineConstants>__MOBILE__;__ANDROID__;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <AndroidUseSharedRuntime>false</AndroidUseSharedRuntime>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="Mono.Android" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="Mono.Data.Sqlite" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\System.Net.Http.Formatting.Droid\lib\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="src\Sharpen\AbstractCollection.cs" />
+    <Compile Include="src\Sharpen\AbstractList.cs" />
+    <Compile Include="src\Sharpen\AbstractMap.cs" />
+    <Compile Include="src\Sharpen\AbstractSet.cs" />
+    <Compile Include="src\Sharpen\AccessController.cs" />
+    <Compile Include="src\Sharpen\AList.cs" />
+    <Compile Include="src\Sharpen\Arrays.cs" />
+    <Compile Include="src\Sharpen\AtomicBoolean.cs" />
+    <Compile Include="src\Sharpen\AtomicInteger.cs" />
+    <Compile Include="src\Sharpen\AtomicLong.cs" />
+    <Compile Include="src\Sharpen\AtomicReference.cs" />
+    <Compile Include="src\Sharpen\AtomicReferenceArray.cs" />
+    <Compile Include="src\Sharpen\BitSet.cs" />
+    <Compile Include="src\Sharpen\BufferedInputStream.cs" />
+    <Compile Include="src\Sharpen\BufferedOutputStream.cs" />
+    <Compile Include="src\Sharpen\BufferedReader.cs" />
+    <Compile Include="src\Sharpen\BufferedWriter.cs" />
+    <Compile Include="src\Sharpen\ByteArrayInputStream.cs" />
+    <Compile Include="src\Sharpen\ByteArrayOutputStream.cs" />
+    <Compile Include="src\Sharpen\ByteBuffer.cs" />
+    <Compile Include="src\Sharpen\ByteOrder.cs" />
+    <Compile Include="src\Sharpen\Callable.cs" />
+    <Compile Include="src\Sharpen\Channels.cs" />
+    <Compile Include="src\Sharpen\CharBuffer.cs" />
+    <Compile Include="src\Sharpen\CharSequence.cs" />
+    <Compile Include="src\Sharpen\CharsetDecoder.cs" />
+    <Compile Include="src\Sharpen\CharsetEncoder.cs" />
+    <Compile Include="src\Sharpen\CharUtils.cs" />
+    <Compile Include="src\Sharpen\CodingErrorAction.cs" />
+    <Compile Include="src\Sharpen\Collections.cs" />
+    <Compile Include="src\Sharpen\ConcurrentHashMap.cs" />
+    <Compile Include="src\Sharpen\ConcurrentMap.cs" />
+    <Compile Include="src\Sharpen\CopyOnWriteArrayList.cs" />
+    <Compile Include="src\Sharpen\CountDownLatch.cs" />
+    <Compile Include="src\Sharpen\CRC32.cs" />
+    <Compile Include="src\Sharpen\CyclicBarrier.cs" />
+    <Compile Include="src\Sharpen\DataConverter.cs" />
+    <Compile Include="src\Sharpen\DateFormat.cs" />
+    <Compile Include="src\Sharpen\DeflaterOutputStream.cs" />
+    <Compile Include="src\Sharpen\DigestInputStream.cs" />
+    <Compile Include="src\Sharpen\DigestOutputStream.cs" />
+    <Compile Include="src\Sharpen\EnumerableWrapper.cs" />
+    <Compile Include="src\Sharpen\EnumeratorWrapper.cs" />
+    <Compile Include="src\Sharpen\EnumSet.cs" />
+    <Compile Include="src\Sharpen\Exceptions.cs" />
+    <Compile Include="src\Sharpen\Executor.cs" />
+    <Compile Include="src\Sharpen\Executors.cs" />
+    <Compile Include="src\Sharpen\ExecutorService.cs" />
+    <Compile Include="src\Sharpen\Extensions.cs" />
+    <Compile Include="src\Sharpen\FileChannel.cs" />
+    <Compile Include="src\Sharpen\FileHelper.cs" />
+    <Compile Include="src\Sharpen\FileInputStream.cs" />
+    <Compile Include="src\Sharpen\FileLock.cs" />
+    <Compile Include="src\Sharpen\FilenameFilter.cs" />
+    <Compile Include="src\Sharpen\FileOutputStream.cs" />
+    <Compile Include="src\Sharpen\FilePath.cs" />
+    <Compile Include="src\Sharpen\FileReader.cs" />
+    <Compile Include="src\Sharpen\FileWriter.cs" />
+    <Compile Include="src\Sharpen\FilterInputStream.cs" />
+    <Compile Include="src\Sharpen\FilterOutputStream.cs" />
+    <Compile Include="src\Sharpen\Future.cs" />
+    <Compile Include="src\Sharpen\GZIPInputStream.cs" />
+    <Compile Include="src\Sharpen\GZIPOutputStream.cs" />
+    <Compile Include="src\Sharpen\HttpURLConnection.cs" />
+    <Compile Include="src\Sharpen\InflaterInputStream.cs" />
+    <Compile Include="src\Sharpen\InheritableThreadLocal.cs" />
+    <Compile Include="src\Sharpen\InputStream.cs" />
+    <Compile Include="src\Sharpen\InputStreamReader.cs" />
+    <Compile Include="src\Sharpen\Iterable.cs" />
+    <Compile Include="src\Sharpen\Iterator.cs" />
+    <Compile Include="src\Sharpen\JavaCalendar.cs" />
+    <Compile Include="src\Sharpen\LinkageError.cs" />
+    <Compile Include="src\Sharpen\LinkedHashMap.cs" />
+    <Compile Include="src\Sharpen\LinkedHashSet.cs" />
+    <Compile Include="src\Sharpen\ListIterator.cs" />
+    <Compile Include="src\Sharpen\MappedByteBuffer.cs" />
+    <Compile Include="src\Sharpen\Matcher.cs" />
+    <Compile Include="src\Sharpen\MessageDigest.cs" />
+    <Compile Include="src\Sharpen\MessageFormat.cs" />
+    <Compile Include="src\Sharpen\ObjectInputStream.cs" />
+    <Compile Include="src\Sharpen\ObjectOutputStream.cs" />
+    <Compile Include="src\Sharpen\OutputStream.cs" />
+    <Compile Include="src\Sharpen\OutputStreamWriter.cs" />
+    <Compile Include="src\Sharpen\PasswordAuthentication.cs" />
+    <Compile Include="src\Sharpen\Pattern.cs" />
+    <Compile Include="src\Sharpen\PipedInputStream.cs" />
+    <Compile Include="src\Sharpen\PipedOutputStream.cs" />
+    <Compile Include="src\Sharpen\PrintWriter.cs" />
+    <Compile Include="src\Sharpen\PrivilegedAction.cs" />
+    <Compile Include="src\Sharpen\Process.cs" />
+    <Compile Include="src\Sharpen\Proxy.cs" />
+    <Compile Include="src\Sharpen\ProxySelector.cs" />
+    <Compile Include="src\Sharpen\RandomAccessFile.cs" />
+    <Compile Include="src\Sharpen\ReentrantLock.cs" />
+    <Compile Include="src\Sharpen\Reference.cs" />
+    <Compile Include="src\Sharpen\ReferenceQueue.cs" />
+    <Compile Include="src\Sharpen\ResourceBundle.cs" />
+    <Compile Include="src\Sharpen\Runnable.cs" />
+    <Compile Include="src\Sharpen\Runtime.cs" />
+    <Compile Include="src\Sharpen\ScheduledExecutorService.cs" />
+    <Compile Include="src\Sharpen\ScheduledThreadPoolExecutor.cs" />
+    <Compile Include="src\Sharpen\SimpleDateFormat.cs" />
+    <Compile Include="src\Sharpen\SingletonList.cs" />
+    <Compile Include="src\Sharpen\SoftReference.cs" />
+    <Compile Include="src\Sharpen\SSLContext.cs" />
+    <Compile Include="src\Sharpen\StackOverflowError.cs" />
+    <Compile Include="src\Sharpen\String.cs" />
+    <Compile Include="src\Sharpen\StringTokenizer.cs" />
+    <Compile Include="src\Sharpen\SynchronizedList.cs" />
+    <Compile Include="src\Sharpen\Thread.cs" />
+    <Compile Include="src\Sharpen\ThreadFactory.cs" />
+    <Compile Include="src\Sharpen\ThreadPoolExecutor.cs" />
+    <Compile Include="src\Sharpen\TimeUnit.cs" />
+    <Compile Include="src\Sharpen\TreeSet.cs" />
+    <Compile Include="src\Sharpen\TrustManager.cs" />
+    <Compile Include="src\Sharpen\Uri.cs" />
+    <Compile Include="src\Sharpen\URLEncoder.cs" />
+    <Compile Include="src\Sharpen\WeakReference.cs" />
+    <Compile Include="src\Sharpen\WrappedSystemStream.cs" />
+    <Compile Include="src\Sharpen\X509Certificate.cs" />
+    <Compile Include="src\Sharpen\X509TrustManager.cs" />
+    <Compile Include="src\Revisions\ChangesOptions.cs" />
+    <Compile Include="src\Revisions\RevisionInternal.cs" />
+    <Compile Include="src\Revisions\RevisionList.cs" />
+    <Compile Include="src\Revisions\SavedRevision.cs" />
+    <Compile Include="src\Revisions\UnsavedRevision.cs" />
+    <Compile Include="src\Replication\Batcher.cs" />
+    <Compile Include="src\Replication\BatchProcessor.cs" />
+    <Compile Include="src\Replication\ChangeTracker.cs" />
+    <Compile Include="src\Replication\ChangeTrackerBackoff.cs" />
+    <Compile Include="src\Replication\ChangeTrackerClient.cs" />
+    <Compile Include="src\Replication\CouchbaseLiteHttpClientFactory.cs" />
+    <Compile Include="src\Replication\HttpResponseException.cs" />
+    <Compile Include="src\Replication\MultipartDocumentReader.cs" />
+    <Compile Include="src\Replication\MultipartReader.cs" />
+    <Compile Include="src\Replication\MultipartReaderDelegate.cs" />
+    <Compile Include="src\Replication\PulledRevision.cs" />
+    <Compile Include="src\Replication\Puller.cs" />
+    <Compile Include="src\Replication\Pusher.cs" />
+    <Compile Include="src\Replication\ScheduledFuture.cs" />
+    <Compile Include="src\Query\LiveQuery.cs" />
+    <Compile Include="src\Query\QueryCompletedEventArgs.cs" />
+    <Compile Include="src\Query\QueryEnumerator.cs" />
+    <Compile Include="src\Query\QueryOptions.cs" />
+    <Compile Include="src\Query\QueryRow.cs" />
+    <Compile Include="src\Properties\AssemblyInfo.cs" />
+    <Compile Include="src\Manager\ManagerOptions.cs" />
+    <Compile Include="src\Extensions\SqliteExtensions.cs" />
+    <Compile Include="src\Extensions\StreamExtensions.cs" />
+    <Compile Include="Resources\Resource.designer.cs" />
+    <Compile Include="src\Exceptions\CouchbaseLiteException.cs" />
+    <Compile Include="src\Documents\AttachmentInternal.cs" />
+    <Compile Include="src\Documents\Body.cs" />
+    <Compile Include="src\Documents\DocumentChange.cs" />
+    <Compile Include="src\Documents\IValidationContext.cs" />
+    <Compile Include="src\Documents\TDContentOptions.cs" />
+    <Compile Include="src\Documents\ValidationContext.cs" />
+    <Compile Include="src\Auth\Authorizer.cs" />
+    <Compile Include="src\Auth\FacebookAuthorizer.cs" />
+    <Compile Include="src\Auth\PersonaAuthorizer.cs" />
+    <Compile Include="src\Store\BlobKey.cs" />
+    <Compile Include="src\Store\BlobStore.cs" />
+    <Compile Include="src\Store\BlobStoreWriter.cs" />
+    <Compile Include="src\Store\ConflictResolutionStrategy.cs" />
+    <Compile Include="src\Store\ContentValues.cs" />
+    <Compile Include="src\Store\CouchbaseSqliteCollationFunctions.cs" />
+    <Compile Include="src\Store\Cursor.cs" />
+    <Compile Include="src\Store\JsonCollator.cs" />
+    <Compile Include="src\Store\MonoSQLiteStorageEngine.cs" />
+    <Compile Include="src\Store\SQLException.cs" />
+    <Compile Include="src\Store\SQLiteStorageEngine.cs" />
+    <Compile Include="src\Store\SQLiteStorageEngineFactory.cs" />
+    <Compile Include="src\Store\Status.cs" />
+    <Compile Include="src\Util\DefaultAuthHandler.cs" />
+    <Compile Include="src\Util\ExtensionMethods.cs" />
+    <Compile Include="src\Util\FileDirUtils.cs" />
+    <Compile Include="src\Util\IHttpClientFactory.cs" />
+    <Compile Include="src\Util\ILogger.cs" />
+    <Compile Include="src\Util\Log.cs" />
+    <Compile Include="src\Util\LoggerFactory.cs" />
+    <Compile Include="src\Util\LruCache.cs" />
+    <Compile Include="src\Util\Misc.cs" />
+    <Compile Include="src\Util\ObjectWriter.cs" />
+    <Compile Include="src\Util\Range.cs" />
+    <Compile Include="src\Util\RemoteRequestCompletionBlock.cs" />
+    <Compile Include="src\Util\SequenceMap.cs" />
+    <Compile Include="src\Util\StringUtils.cs" />
+    <Compile Include="src\Util\SystemLogger.cs" />
+    <Compile Include="src\Util\URIUtils.cs" />
+    <Compile Include="src\Attachment.cs" />
+    <Compile Include="src\Database.cs" />
+    <Compile Include="src\Document.cs" />
+    <Compile Include="src\Manager.cs" />
+    <Compile Include="src\Query.cs" />
+    <Compile Include="src\Replication.cs" />
+    <Compile Include="src\Revision.cs" />
+    <Compile Include="src\View.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <None Include="Resources\AboutResources.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\values\Strings.xml" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
+  <ItemGroup>
+    <ProjectReference Include="..\System.Net.Http.Formatting.Droid\System.Net.Http.Formatting.Droid.csproj">
+      <Project>{938B64CC-9C6E-44A1-A99A-15FC1339DCBB}</Project>
+      <Name>System.Net.Http.Formatting.Droid</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ICSharpCode.SharpZLib.Droid\ICSharpCode.SharpZLib.Droid.csproj">
+      <Project>{1960FCA0-6FBF-4915-B3B3-9887203CF399}</Project>
+      <Name>ICSharpCode.SharpZLib.Droid</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="src\" />
+  </ItemGroup>
+</Project>

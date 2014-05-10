@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{938B64CC-9C6E-44A1-A99A-15FC1339DCBB}</ProjectGuid>
+    <ProjectTypeGuids>{EFBA0AD7-5A72-4C68-AF49-83D382785DCF};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <RootNamespace>System.Net.Http.Formatting.Droid</RootNamespace>
+    <MonoAndroidAssetsPrefix>Assets</MonoAndroidAssetsPrefix>
+    <MonoAndroidResourcePrefix>Resources</MonoAndroidResourcePrefix>
+    <AndroidResgenClass>Resource</AndroidResgenClass>
+    <AndroidResgenFile>Resources\Resource.designer.cs</AndroidResgenFile>
+    <AndroidUseLatestPlatformSdk>True</AndroidUseLatestPlatformSdk>
+    <AssemblyName>System.Net.Http.Formatting.Droid</AssemblyName>
+    <TargetFrameworkVersion>v4.4</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;__MOBILE__;__ANDROID__;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AndroidLinkMode>None</AndroidLinkMode>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <DefineConstants>__MOBILE__;__ANDROID__;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <AndroidUseSharedRuntime>false</AndroidUseSharedRuntime>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="Mono.Android" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>lib\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Resources\Resource.designer.cs" />
+    <Compile Include="..\System.Net.Http.Formatting.Touch\src\CloneableExtensions.cs">
+      <Link>src\CloneableExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\System.Net.Http.Formatting.Touch\src\FormattingUtilities.cs">
+      <Link>src\FormattingUtilities.cs</Link>
+    </Compile>
+    <Compile Include="..\System.Net.Http.Formatting.Touch\src\GlobalSuppressions.cs">
+      <Link>src\GlobalSuppressions.cs</Link>
+    </Compile>
+    <Compile Include="..\System.Net.Http.Formatting.Touch\src\HttpClientExtensions.cs">
+      <Link>src\HttpClientExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\System.Net.Http.Formatting.Touch\src\HttpClientFactory.cs">
+      <Link>src\HttpClientFactory.cs</Link>
+    </Compile>
+    <Compile Include="..\System.Net.Http.Formatting.Touch\src\HttpContentCollectionExtensions.cs">
+      <Link>src\HttpContentCollectionExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\System.Net.Http.Formatting.Touch\src\HttpContentExtensions.cs">
+      <Link>src\HttpContentExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\System.Net.Http.Formatting.Touch\src\HttpContentMessageExtensions.cs">
+      <Link>src\HttpContentMessageExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\System.Net.Http.Formatting.Touch\src\HttpContentMultipartExtensions.cs">
+      <Link>src\HttpContentMultipartExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\System.Net.Http.Formatting.Touch\src\HttpHeaderExtensions.cs">
+      <Link>src\HttpHeaderExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\System.Net.Http.Formatting.Touch\src\HttpMessageContent.cs">
+      <Link>src\HttpMessageContent.cs</Link>
+    </Compile>
+    <Compile Include="..\System.Net.Http.Formatting.Touch\src\HttpRequestHeadersExtensions.cs">
+      <Link>src\HttpRequestHeadersExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\System.Net.Http.Formatting.Touch\src\HttpRequestMessageExtensions.cs">
+      <Link>src\HttpRequestMessageExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\System.Net.Http.Formatting.Touch\src\HttpResponseHeadersExtensions.cs">
+      <Link>src\HttpResponseHeadersExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\System.Net.Http.Formatting.Touch\src\HttpUnsortedHeaders.cs">
+      <Link>src\HttpUnsortedHeaders.cs</Link>
+    </Compile>
+    <Compile Include="..\System.Net.Http.Formatting.Touch\src\HttpUnsortedRequest.cs">
+      <Link>src\HttpUnsortedRequest.cs</Link>
+    </Compile>
+    <Compile Include="..\System.Net.Http.Formatting.Touch\src\HttpUnsortedResponse.cs">
+      <Link>src\HttpUnsortedResponse.cs</Link>
+    </Compile>
+    <Compile Include="..\System.Net.Http.Formatting.Touch\src\IMultipartStreamProvider.cs">
+      <Link>src\IMultipartStreamProvider.cs</Link>
+    </Compile>
+    <Compile Include="..\System.Net.Http.Formatting.Touch\src\MimeBodyPart.cs">
+      <Link>src\MimeBodyPart.cs</Link>
+    </Compile>
+    <Compile Include="..\System.Net.Http.Formatting.Touch\src\MultipartFileStreamProvider.cs">
+      <Link>src\MultipartFileStreamProvider.cs</Link>
+    </Compile>
+    <Compile Include="..\System.Net.Http.Formatting.Touch\src\MultipartFormDataStreamProvider.cs">
+      <Link>src\MultipartFormDataStreamProvider.cs</Link>
+    </Compile>
+    <Compile Include="..\System.Net.Http.Formatting.Touch\src\MultipartMemoryStreamProvider.cs">
+      <Link>src\MultipartMemoryStreamProvider.cs</Link>
+    </Compile>
+    <Compile Include="..\System.Net.Http.Formatting.Touch\src\ObjectContent.cs">
+      <Link>src\ObjectContent.cs</Link>
+    </Compile>
+    <Compile Include="..\System.Net.Http.Formatting.Touch\src\UriExtensions.cs">
+      <Link>src\UriExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\System.Net.Http.Formatting.Touch\src\Common\CommonWebApiResources.Designer.cs">
+      <Link>src\Common\CommonWebApiResources.Designer.cs</Link>
+    </Compile>
+    <Compile Include="..\System.Net.Http.Formatting.Touch\src\Common\Error.cs">
+      <Link>src\Common\Error.cs</Link>
+    </Compile>
+    <Compile Include="..\System.Net.Http.Formatting.Touch\src\Common\TaskHelpers.cs">
+      <Link>src\Common\TaskHelpers.cs</Link>
+    </Compile>
+    <Compile Include="..\System.Net.Http.Formatting.Touch\src\Common\TaskHelpersExtensions.cs">
+      <Link>src\Common\TaskHelpersExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\System.Net.Http.Formatting.Touch\src\Formatting\BufferedMediaTypeFormatter.cs">
+      <Link>src\Formatting\BufferedMediaTypeFormatter.cs</Link>
+    </Compile>
+    <Compile Include="..\System.Net.Http.Formatting.Touch\src\Formatting\ContentNegotiationResult.cs">
+      <Link>src\Formatting\ContentNegotiationResult.cs</Link>
+    </Compile>
+    <Compile Include="..\System.Net.Http.Formatting.Touch\src\Formatting\DefaultContentNegotiator.cs">
+      <Link>src\Formatting\DefaultContentNegotiator.cs</Link>
+    </Compile>
+    <Compile Include="..\System.Net.Http.Formatting.Touch\src\Formatting\DelegatingEnumerable.cs">
+      <Link>src\Formatting\DelegatingEnumerable.cs</Link>
+    </Compile>
+    <Compile Include="..\System.Net.Http.Formatting.Touch\src\Formatting\FormDataCollection.cs">
+      <Link>src\Formatting\FormDataCollection.cs</Link>
+    </Compile>
+    <Compile Include="..\System.Net.Http.Formatting.Touch\src\Formatting\FormUrlEncodedJson.cs">
+      <Link>src\Formatting\FormUrlEncodedJson.cs</Link>
+    </Compile>
+    <Compile Include="..\System.Net.Http.Formatting.Touch\src\Formatting\FormUrlEncodedMediaTypeFormatter.cs">
+      <Link>src\Formatting\FormUrlEncodedMediaTypeFormatter.cs</Link>
+    </Compile>
+    <Compile Include="..\System.Net.Http.Formatting.Touch\src\Formatting\IContentNegotiator.cs">
+      <Link>src\Formatting\IContentNegotiator.cs</Link>
+    </Compile>
+    <Compile Include="..\System.Net.Http.Formatting.Touch\src\Formatting\IFormatterLogger.cs">
+      <Link>src\Formatting\IFormatterLogger.cs</Link>
+    </Compile>
+    <Compile Include="..\System.Net.Http.Formatting.Touch\src\Formatting\IRequiredMemberSelector.cs">
+      <Link>src\Formatting\IRequiredMemberSelector.cs</Link>
+    </Compile>
+    <Compile Include="..\System.Net.Http.Formatting.Touch\src\Formatting\JsonContractResolver.cs">
+      <Link>src\Formatting\JsonContractResolver.cs</Link>
+    </Compile>
+    <Compile Include="..\System.Net.Http.Formatting.Touch\src\Formatting\JsonMediaTypeFormatter.cs">
+      <Link>src\Formatting\JsonMediaTypeFormatter.cs</Link>
+    </Compile>
+    <Compile Include="..\System.Net.Http.Formatting.Touch\src\Formatting\JsonReaderQuotaException.cs">
+      <Link>src\Formatting\JsonReaderQuotaException.cs</Link>
+    </Compile>
+    <Compile Include="..\System.Net.Http.Formatting.Touch\src\Formatting\MediaRangeMapping.cs">
+      <Link>src\Formatting\MediaRangeMapping.cs</Link>
+    </Compile>
+    <Compile Include="..\System.Net.Http.Formatting.Touch\src\Formatting\MediaTypeConstants.cs">
+      <Link>src\Formatting\MediaTypeConstants.cs</Link>
+    </Compile>
+    <Compile Include="..\System.Net.Http.Formatting.Touch\src\Formatting\MediaTypeFormatter.cs">
+      <Link>src\Formatting\MediaTypeFormatter.cs</Link>
+    </Compile>
+    <Compile Include="..\System.Net.Http.Formatting.Touch\src\Formatting\MediaTypeFormatterCollection.cs">
+      <Link>src\Formatting\MediaTypeFormatterCollection.cs</Link>
+    </Compile>
+    <Compile Include="..\System.Net.Http.Formatting.Touch\src\Formatting\MediaTypeFormatterExtensions.cs">
+      <Link>src\Formatting\MediaTypeFormatterExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\System.Net.Http.Formatting.Touch\src\Formatting\MediaTypeHeaderValueExtensions.cs">
+      <Link>src\Formatting\MediaTypeHeaderValueExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\System.Net.Http.Formatting.Touch\src\Formatting\MediaTypeMapping.cs">
+      <Link>src\Formatting\MediaTypeMapping.cs</Link>
+    </Compile>
+    <Compile Include="..\System.Net.Http.Formatting.Touch\src\Formatting\MediaTypeMatch.cs">
+      <Link>src\Formatting\MediaTypeMatch.cs</Link>
+    </Compile>
+    <Compile Include="..\System.Net.Http.Formatting.Touch\src\Formatting\MediaTypeWithQualityHeaderValueComparer.cs">
+      <Link>src\Formatting\MediaTypeWithQualityHeaderValueComparer.cs</Link>
+    </Compile>
+    <Compile Include="..\System.Net.Http.Formatting.Touch\src\Formatting\ParsedMediaTypeHeaderValue.cs">
+      <Link>src\Formatting\ParsedMediaTypeHeaderValue.cs</Link>
+    </Compile>
+    <Compile Include="..\System.Net.Http.Formatting.Touch\src\Formatting\QueryStringMapping.cs">
+      <Link>src\Formatting\QueryStringMapping.cs</Link>
+    </Compile>
+    <Compile Include="..\System.Net.Http.Formatting.Touch\src\Formatting\RequestHeaderMapping.cs">
+      <Link>src\Formatting\RequestHeaderMapping.cs</Link>
+    </Compile>
+    <Compile Include="..\System.Net.Http.Formatting.Touch\src\Formatting\ResponseFormatterSelectionResult.cs">
+      <Link>src\Formatting\ResponseFormatterSelectionResult.cs</Link>
+    </Compile>
+    <Compile Include="..\System.Net.Http.Formatting.Touch\src\Formatting\ResponseMediaTypeMatch.cs">
+      <Link>src\Formatting\ResponseMediaTypeMatch.cs</Link>
+    </Compile>
+    <Compile Include="..\System.Net.Http.Formatting.Touch\src\Formatting\SecureJsonTextReader.cs">
+      <Link>src\Formatting\SecureJsonTextReader.cs</Link>
+    </Compile>
+    <Compile Include="..\System.Net.Http.Formatting.Touch\src\Formatting\StringComparisonHelper.cs">
+      <Link>src\Formatting\StringComparisonHelper.cs</Link>
+    </Compile>
+    <Compile Include="..\System.Net.Http.Formatting.Touch\src\Formatting\StringWithQualityHeaderValueComparer.cs">
+      <Link>src\Formatting\StringWithQualityHeaderValueComparer.cs</Link>
+    </Compile>
+    <Compile Include="..\System.Net.Http.Formatting.Touch\src\Formatting\XHRRequestHeaderMapping.cs">
+      <Link>src\Formatting\XHRRequestHeaderMapping.cs</Link>
+    </Compile>
+    <Compile Include="..\System.Net.Http.Formatting.Touch\src\Formatting\XmlMediaTypeFormatter.cs">
+      <Link>src\Formatting\XmlMediaTypeFormatter.cs</Link>
+    </Compile>
+    <Compile Include="..\System.Net.Http.Formatting.Touch\src\Formatting\Parsers\FormUrlEncodedParser.cs">
+      <Link>src\Formatting\Parsers\FormUrlEncodedParser.cs</Link>
+    </Compile>
+    <Compile Include="..\System.Net.Http.Formatting.Touch\src\Formatting\Parsers\HttpRequestHeaderParser.cs">
+      <Link>src\Formatting\Parsers\HttpRequestHeaderParser.cs</Link>
+    </Compile>
+    <Compile Include="..\System.Net.Http.Formatting.Touch\src\Formatting\Parsers\HttpRequestLineParser.cs">
+      <Link>src\Formatting\Parsers\HttpRequestLineParser.cs</Link>
+    </Compile>
+    <Compile Include="..\System.Net.Http.Formatting.Touch\src\Formatting\Parsers\HttpResponseHeaderParser.cs">
+      <Link>src\Formatting\Parsers\HttpResponseHeaderParser.cs</Link>
+    </Compile>
+    <Compile Include="..\System.Net.Http.Formatting.Touch\src\Formatting\Parsers\HttpStatusLineParser.cs">
+      <Link>src\Formatting\Parsers\HttpStatusLineParser.cs</Link>
+    </Compile>
+    <Compile Include="..\System.Net.Http.Formatting.Touch\src\Formatting\Parsers\InternetMessageFormatHeaderParser.cs">
+      <Link>src\Formatting\Parsers\InternetMessageFormatHeaderParser.cs</Link>
+    </Compile>
+    <Compile Include="..\System.Net.Http.Formatting.Touch\src\Formatting\Parsers\MimeMultipartBodyPartParser.cs">
+      <Link>src\Formatting\Parsers\MimeMultipartBodyPartParser.cs</Link>
+    </Compile>
+    <Compile Include="..\System.Net.Http.Formatting.Touch\src\Formatting\Parsers\MimeMultipartParser.cs">
+      <Link>src\Formatting\Parsers\MimeMultipartParser.cs</Link>
+    </Compile>
+    <Compile Include="..\System.Net.Http.Formatting.Touch\src\Formatting\Parsers\ParserState.cs">
+      <Link>src\Formatting\Parsers\ParserState.cs</Link>
+    </Compile>
+    <Compile Include="..\System.Net.Http.Formatting.Touch\src\Headers\CookieHeaderValue.cs">
+      <Link>src\Headers\CookieHeaderValue.cs</Link>
+    </Compile>
+    <Compile Include="..\System.Net.Http.Formatting.Touch\src\Headers\CookieState.cs">
+      <Link>src\Headers\CookieState.cs</Link>
+    </Compile>
+    <Compile Include="..\System.Net.Http.Formatting.Touch\src\Internal\AsyncResultWithExtraData.cs">
+      <Link>src\Internal\AsyncResultWithExtraData.cs</Link>
+    </Compile>
+    <Compile Include="..\System.Net.Http.Formatting.Touch\src\Internal\DelegatingStream.cs">
+      <Link>src\Internal\DelegatingStream.cs</Link>
+    </Compile>
+    <Compile Include="..\System.Net.Http.Formatting.Touch\src\Internal\HttpValueCollection.cs">
+      <Link>src\Internal\HttpValueCollection.cs</Link>
+    </Compile>
+    <Compile Include="..\System.Net.Http.Formatting.Touch\src\Internal\NonClosingDelegatingStream.cs">
+      <Link>src\Internal\NonClosingDelegatingStream.cs</Link>
+    </Compile>
+    <Compile Include="..\System.Net.Http.Formatting.Touch\src\Internal\UriQueryUtility.cs">
+      <Link>src\Internal\UriQueryUtility.cs</Link>
+    </Compile>
+    <Compile Include="..\System.Net.Http.Formatting.Touch\src\Mono\RS.cs">
+      <Link>src\Mono\RS.cs</Link>
+    </Compile>
+    <Compile Include="..\System.Net.Http.Formatting.Touch\src\Properties\AssemblyInfo.cs">
+      <Link>src\Properties\AssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\System.Net.Http.Formatting.Touch\src\Properties\Resources.Designer.cs">
+      <Link>src\Properties\Resources.Designer.cs</Link>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AboutResources.txt" />
+    <None Include="..\System.Net.Http.Formatting.Touch\src\Common\CommonWebApiResources.resx">
+      <Link>src\Common\CommonWebApiResources.resx</Link>
+    </None>
+    <None Include="..\System.Net.Http.Formatting.Touch\src\Properties\Resources.resx">
+      <Link>src\Properties\Resources.resx</Link>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\values\Strings.xml" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
+  <ItemGroup>
+    <Folder Include="src\" />
+  </ItemGroup>
+</Project>

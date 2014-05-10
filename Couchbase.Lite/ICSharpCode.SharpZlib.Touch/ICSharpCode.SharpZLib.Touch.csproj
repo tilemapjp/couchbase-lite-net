@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{28D0FFBC-5A7D-46DF-B966-453EE2ECCCF7}</ProjectGuid>
+    <ProjectTypeGuids>{6BC8ED88-2882-458C-8E55-DFD12B67127B};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <RootNamespace>ICSharpCode.SharpZlib.Touch</RootNamespace>
+    <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
+    <AssemblyName>ICSharpCode.SharpZlib.Touch</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="monotouch" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\" />
+    <Folder Include="src\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <Compile Include="src\Main.cs" />
+    <Compile Include="src\SharpZipBaseException.cs" />
+    <Compile Include="src\BZip2\BZip2.cs" />
+    <Compile Include="src\BZip2\BZip2Constants.cs" />
+    <Compile Include="src\BZip2\BZip2Exception.cs" />
+    <Compile Include="src\BZip2\BZip2InputStream.cs" />
+    <Compile Include="src\BZip2\BZip2OutputStream.cs" />
+    <Compile Include="src\Checksums\Adler32.cs" />
+    <Compile Include="src\Checksums\Crc32.cs" />
+    <Compile Include="src\Checksums\IChecksum.cs" />
+    <Compile Include="src\Checksums\StrangeCrc.cs" />
+    <Compile Include="src\Core\FileSystemScanner.cs" />
+    <Compile Include="src\Core\INameTransform.cs" />
+    <Compile Include="src\Core\IScanFilter.cs" />
+    <Compile Include="src\Core\NameFilter.cs" />
+    <Compile Include="src\Core\PathFilter.cs" />
+    <Compile Include="src\Core\StreamUtils.cs" />
+    <Compile Include="src\Core\WindowsPathUtils.cs" />
+    <Compile Include="src\Encryption\PkzipClassic.cs" />
+    <Compile Include="src\Encryption\ZipAESStream.cs" />
+    <Compile Include="src\Encryption\ZipAESTransform.cs" />
+    <Compile Include="src\GZip\GZipConstants.cs" />
+    <Compile Include="src\GZip\GZipException.cs" />
+    <Compile Include="src\GZip\GzipInputStream.cs" />
+    <Compile Include="src\GZip\GzipOutputStream.cs" />
+    <Compile Include="src\Tar\InvalidHeaderException.cs" />
+    <Compile Include="src\Tar\TarArchive.cs" />
+    <Compile Include="src\Tar\TarBuffer.cs" />
+    <Compile Include="src\Tar\TarEntry.cs" />
+    <Compile Include="src\Tar\TarException.cs" />
+    <Compile Include="src\Tar\TarHeader.cs" />
+    <Compile Include="src\Tar\TarInputStream.cs" />
+    <Compile Include="src\Tar\TarOutputStream.cs" />
+    <Compile Include="src\Zip\FastZip.cs" />
+    <Compile Include="src\Zip\IEntryFactory.cs" />
+    <Compile Include="src\Zip\WindowsNameTransform.cs" />
+    <Compile Include="src\Zip\ZipConstants.cs" />
+    <Compile Include="src\Zip\ZipEntry.cs" />
+    <Compile Include="src\Zip\ZipEntryFactory.cs" />
+    <Compile Include="src\Zip\ZipException.cs" />
+    <Compile Include="src\Zip\ZipExtraData.cs" />
+    <Compile Include="src\Zip\ZipFile.cs" />
+    <Compile Include="src\Zip\ZipHelperStream.cs" />
+    <Compile Include="src\Zip\ZipInputStream.cs" />
+    <Compile Include="src\Zip\ZipNameTransform.cs" />
+    <Compile Include="src\Zip\ZipOutputStream.cs" />
+    <Compile Include="src\Zip\Compression\Deflater.cs" />
+    <Compile Include="src\Zip\Compression\DeflaterConstants.cs" />
+    <Compile Include="src\Zip\Compression\DeflaterEngine.cs" />
+    <Compile Include="src\Zip\Compression\DeflaterHuffman.cs" />
+    <Compile Include="src\Zip\Compression\DeflaterPending.cs" />
+    <Compile Include="src\Zip\Compression\Inflater.cs" />
+    <Compile Include="src\Zip\Compression\InflaterDynHeader.cs" />
+    <Compile Include="src\Zip\Compression\InflaterHuffmanTree.cs" />
+    <Compile Include="src\Zip\Compression\PendingBuffer.cs" />
+    <Compile Include="src\Zip\Compression\Streams\DeflaterOutputStream.cs" />
+    <Compile Include="src\Zip\Compression\Streams\InflaterInputStream.cs" />
+    <Compile Include="src\Zip\Compression\Streams\OutputWindow.cs" />
+    <Compile Include="src\Zip\Compression\Streams\StreamManipulator.cs" />
+  </ItemGroup>
+</Project>

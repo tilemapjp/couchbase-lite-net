@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1960FCA0-6FBF-4915-B3B3-9887203CF399}</ProjectGuid>
+    <ProjectTypeGuids>{EFBA0AD7-5A72-4C68-AF49-83D382785DCF};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <RootNamespace>ICSharpCode.SharpZLib.Droid</RootNamespace>
+    <MonoAndroidAssetsPrefix>Assets</MonoAndroidAssetsPrefix>
+    <MonoAndroidResourcePrefix>Resources</MonoAndroidResourcePrefix>
+    <AndroidResgenClass>Resource</AndroidResgenClass>
+    <AndroidResgenFile>Resources\Resource.designer.cs</AndroidResgenFile>
+    <AndroidUseLatestPlatformSdk>True</AndroidUseLatestPlatformSdk>
+    <AssemblyName>ICSharpCode.SharpZLib.Droid</AssemblyName>
+    <TargetFrameworkVersion>v4.4</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;__MOBILE__;__ANDROID__;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AndroidLinkMode>None</AndroidLinkMode>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <DefineConstants>__MOBILE__;__ANDROID__;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <AndroidUseSharedRuntime>false</AndroidUseSharedRuntime>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="Mono.Android" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Resources\Resource.designer.cs" />
+    <Compile Include="..\ICSharpCode.SharpZlib.Touch\src\Main.cs">
+      <Link>src\Main.cs</Link>
+    </Compile>
+    <Compile Include="..\ICSharpCode.SharpZlib.Touch\src\SharpZipBaseException.cs">
+      <Link>src\SharpZipBaseException.cs</Link>
+    </Compile>
+    <Compile Include="..\ICSharpCode.SharpZlib.Touch\src\BZip2\BZip2.cs">
+      <Link>src\BZip2\BZip2.cs</Link>
+    </Compile>
+    <Compile Include="..\ICSharpCode.SharpZlib.Touch\src\BZip2\BZip2Constants.cs">
+      <Link>src\BZip2\BZip2Constants.cs</Link>
+    </Compile>
+    <Compile Include="..\ICSharpCode.SharpZlib.Touch\src\BZip2\BZip2Exception.cs">
+      <Link>src\BZip2\BZip2Exception.cs</Link>
+    </Compile>
+    <Compile Include="..\ICSharpCode.SharpZlib.Touch\src\BZip2\BZip2InputStream.cs">
+      <Link>src\BZip2\BZip2InputStream.cs</Link>
+    </Compile>
+    <Compile Include="..\ICSharpCode.SharpZlib.Touch\src\BZip2\BZip2OutputStream.cs">
+      <Link>src\BZip2\BZip2OutputStream.cs</Link>
+    </Compile>
+    <Compile Include="..\ICSharpCode.SharpZlib.Touch\src\Checksums\Adler32.cs">
+      <Link>src\Checksums\Adler32.cs</Link>
+    </Compile>
+    <Compile Include="..\ICSharpCode.SharpZlib.Touch\src\Checksums\Crc32.cs">
+      <Link>src\Checksums\Crc32.cs</Link>
+    </Compile>
+    <Compile Include="..\ICSharpCode.SharpZlib.Touch\src\Checksums\IChecksum.cs">
+      <Link>src\Checksums\IChecksum.cs</Link>
+    </Compile>
+    <Compile Include="..\ICSharpCode.SharpZlib.Touch\src\Checksums\StrangeCrc.cs">
+      <Link>src\Checksums\StrangeCrc.cs</Link>
+    </Compile>
+    <Compile Include="..\ICSharpCode.SharpZlib.Touch\src\Core\FileSystemScanner.cs">
+      <Link>src\Core\FileSystemScanner.cs</Link>
+    </Compile>
+    <Compile Include="..\ICSharpCode.SharpZlib.Touch\src\Core\INameTransform.cs">
+      <Link>src\Core\INameTransform.cs</Link>
+    </Compile>
+    <Compile Include="..\ICSharpCode.SharpZlib.Touch\src\Core\IScanFilter.cs">
+      <Link>src\Core\IScanFilter.cs</Link>
+    </Compile>
+    <Compile Include="..\ICSharpCode.SharpZlib.Touch\src\Core\NameFilter.cs">
+      <Link>src\Core\NameFilter.cs</Link>
+    </Compile>
+    <Compile Include="..\ICSharpCode.SharpZlib.Touch\src\Core\PathFilter.cs">
+      <Link>src\Core\PathFilter.cs</Link>
+    </Compile>
+    <Compile Include="..\ICSharpCode.SharpZlib.Touch\src\Core\StreamUtils.cs">
+      <Link>src\Core\StreamUtils.cs</Link>
+    </Compile>
+    <Compile Include="..\ICSharpCode.SharpZlib.Touch\src\Core\WindowsPathUtils.cs">
+      <Link>src\Core\WindowsPathUtils.cs</Link>
+    </Compile>
+    <Compile Include="..\ICSharpCode.SharpZlib.Touch\src\Encryption\PkzipClassic.cs">
+      <Link>src\Encryption\PkzipClassic.cs</Link>
+    </Compile>
+    <Compile Include="..\ICSharpCode.SharpZlib.Touch\src\Encryption\ZipAESStream.cs">
+      <Link>src\Encryption\ZipAESStream.cs</Link>
+    </Compile>
+    <Compile Include="..\ICSharpCode.SharpZlib.Touch\src\Encryption\ZipAESTransform.cs">
+      <Link>src\Encryption\ZipAESTransform.cs</Link>
+    </Compile>
+    <Compile Include="..\ICSharpCode.SharpZlib.Touch\src\GZip\GZipConstants.cs">
+      <Link>src\GZip\GZipConstants.cs</Link>
+    </Compile>
+    <Compile Include="..\ICSharpCode.SharpZlib.Touch\src\GZip\GZipException.cs">
+      <Link>src\GZip\GZipException.cs</Link>
+    </Compile>
+    <Compile Include="..\ICSharpCode.SharpZlib.Touch\src\GZip\GzipInputStream.cs">
+      <Link>src\GZip\GzipInputStream.cs</Link>
+    </Compile>
+    <Compile Include="..\ICSharpCode.SharpZlib.Touch\src\GZip\GzipOutputStream.cs">
+      <Link>src\GZip\GzipOutputStream.cs</Link>
+    </Compile>
+    <Compile Include="..\ICSharpCode.SharpZlib.Touch\src\Tar\InvalidHeaderException.cs">
+      <Link>src\Tar\InvalidHeaderException.cs</Link>
+    </Compile>
+    <Compile Include="..\ICSharpCode.SharpZlib.Touch\src\Tar\TarArchive.cs">
+      <Link>src\Tar\TarArchive.cs</Link>
+    </Compile>
+    <Compile Include="..\ICSharpCode.SharpZlib.Touch\src\Tar\TarBuffer.cs">
+      <Link>src\Tar\TarBuffer.cs</Link>
+    </Compile>
+    <Compile Include="..\ICSharpCode.SharpZlib.Touch\src\Tar\TarEntry.cs">
+      <Link>src\Tar\TarEntry.cs</Link>
+    </Compile>
+    <Compile Include="..\ICSharpCode.SharpZlib.Touch\src\Tar\TarException.cs">
+      <Link>src\Tar\TarException.cs</Link>
+    </Compile>
+    <Compile Include="..\ICSharpCode.SharpZlib.Touch\src\Tar\TarHeader.cs">
+      <Link>src\Tar\TarHeader.cs</Link>
+    </Compile>
+    <Compile Include="..\ICSharpCode.SharpZlib.Touch\src\Tar\TarInputStream.cs">
+      <Link>src\Tar\TarInputStream.cs</Link>
+    </Compile>
+    <Compile Include="..\ICSharpCode.SharpZlib.Touch\src\Tar\TarOutputStream.cs">
+      <Link>src\Tar\TarOutputStream.cs</Link>
+    </Compile>
+    <Compile Include="..\ICSharpCode.SharpZlib.Touch\src\Zip\FastZip.cs">
+      <Link>src\Zip\FastZip.cs</Link>
+    </Compile>
+    <Compile Include="..\ICSharpCode.SharpZlib.Touch\src\Zip\IEntryFactory.cs">
+      <Link>src\Zip\IEntryFactory.cs</Link>
+    </Compile>
+    <Compile Include="..\ICSharpCode.SharpZlib.Touch\src\Zip\WindowsNameTransform.cs">
+      <Link>src\Zip\WindowsNameTransform.cs</Link>
+    </Compile>
+    <Compile Include="..\ICSharpCode.SharpZlib.Touch\src\Zip\ZipConstants.cs">
+      <Link>src\Zip\ZipConstants.cs</Link>
+    </Compile>
+    <Compile Include="..\ICSharpCode.SharpZlib.Touch\src\Zip\ZipEntry.cs">
+      <Link>src\Zip\ZipEntry.cs</Link>
+    </Compile>
+    <Compile Include="..\ICSharpCode.SharpZlib.Touch\src\Zip\ZipEntryFactory.cs">
+      <Link>src\Zip\ZipEntryFactory.cs</Link>
+    </Compile>
+    <Compile Include="..\ICSharpCode.SharpZlib.Touch\src\Zip\ZipException.cs">
+      <Link>src\Zip\ZipException.cs</Link>
+    </Compile>
+    <Compile Include="..\ICSharpCode.SharpZlib.Touch\src\Zip\ZipExtraData.cs">
+      <Link>src\Zip\ZipExtraData.cs</Link>
+    </Compile>
+    <Compile Include="..\ICSharpCode.SharpZlib.Touch\src\Zip\ZipFile.cs">
+      <Link>src\Zip\ZipFile.cs</Link>
+    </Compile>
+    <Compile Include="..\ICSharpCode.SharpZlib.Touch\src\Zip\ZipHelperStream.cs">
+      <Link>src\Zip\ZipHelperStream.cs</Link>
+    </Compile>
+    <Compile Include="..\ICSharpCode.SharpZlib.Touch\src\Zip\ZipInputStream.cs">
+      <Link>src\Zip\ZipInputStream.cs</Link>
+    </Compile>
+    <Compile Include="..\ICSharpCode.SharpZlib.Touch\src\Zip\ZipNameTransform.cs">
+      <Link>src\Zip\ZipNameTransform.cs</Link>
+    </Compile>
+    <Compile Include="..\ICSharpCode.SharpZlib.Touch\src\Zip\ZipOutputStream.cs">
+      <Link>src\Zip\ZipOutputStream.cs</Link>
+    </Compile>
+    <Compile Include="..\ICSharpCode.SharpZlib.Touch\src\Zip\Compression\Deflater.cs">
+      <Link>src\Zip\Compression\Deflater.cs</Link>
+    </Compile>
+    <Compile Include="..\ICSharpCode.SharpZlib.Touch\src\Zip\Compression\DeflaterConstants.cs">
+      <Link>src\Zip\Compression\DeflaterConstants.cs</Link>
+    </Compile>
+    <Compile Include="..\ICSharpCode.SharpZlib.Touch\src\Zip\Compression\DeflaterEngine.cs">
+      <Link>src\Zip\Compression\DeflaterEngine.cs</Link>
+    </Compile>
+    <Compile Include="..\ICSharpCode.SharpZlib.Touch\src\Zip\Compression\DeflaterHuffman.cs">
+      <Link>src\Zip\Compression\DeflaterHuffman.cs</Link>
+    </Compile>
+    <Compile Include="..\ICSharpCode.SharpZlib.Touch\src\Zip\Compression\DeflaterPending.cs">
+      <Link>src\Zip\Compression\DeflaterPending.cs</Link>
+    </Compile>
+    <Compile Include="..\ICSharpCode.SharpZlib.Touch\src\Zip\Compression\Inflater.cs">
+      <Link>src\Zip\Compression\Inflater.cs</Link>
+    </Compile>
+    <Compile Include="..\ICSharpCode.SharpZlib.Touch\src\Zip\Compression\InflaterDynHeader.cs">
+      <Link>src\Zip\Compression\InflaterDynHeader.cs</Link>
+    </Compile>
+    <Compile Include="..\ICSharpCode.SharpZlib.Touch\src\Zip\Compression\InflaterHuffmanTree.cs">
+      <Link>src\Zip\Compression\InflaterHuffmanTree.cs</Link>
+    </Compile>
+    <Compile Include="..\ICSharpCode.SharpZlib.Touch\src\Zip\Compression\PendingBuffer.cs">
+      <Link>src\Zip\Compression\PendingBuffer.cs</Link>
+    </Compile>
+    <Compile Include="..\ICSharpCode.SharpZlib.Touch\src\Zip\Compression\Streams\DeflaterOutputStream.cs">
+      <Link>src\Zip\Compression\Streams\DeflaterOutputStream.cs</Link>
+    </Compile>
+    <Compile Include="..\ICSharpCode.SharpZlib.Touch\src\Zip\Compression\Streams\InflaterInputStream.cs">
+      <Link>src\Zip\Compression\Streams\InflaterInputStream.cs</Link>
+    </Compile>
+    <Compile Include="..\ICSharpCode.SharpZlib.Touch\src\Zip\Compression\Streams\OutputWindow.cs">
+      <Link>src\Zip\Compression\Streams\OutputWindow.cs</Link>
+    </Compile>
+    <Compile Include="..\ICSharpCode.SharpZlib.Touch\src\Zip\Compression\Streams\StreamManipulator.cs">
+      <Link>src\Zip\Compression\Streams\StreamManipulator.cs</Link>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AboutResources.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\values\Strings.xml" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
+  <ItemGroup>
+    <Folder Include="src\" />
+  </ItemGroup>
+</Project>

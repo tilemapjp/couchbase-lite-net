@@ -1,0 +1,651 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F2C2ACC0-5AC0-4EA7-8D2C-ACE2FA683845}</ProjectGuid>
+    <ProjectTypeGuids>{6BC8ED88-2882-458C-8E55-DFD12B67127B};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Couchbase.Lite</RootNamespace>
+    <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
+    <AssemblyName>Couchbase.Lite</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="monotouch" />
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\System.Net.Http.Formatting.Touch\lib\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Data.Sqlite" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Web.Services" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\" />
+    <Folder Include="src\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <ProjectReference Include="..\ICSharpCode.SharpZlib.Touch\ICSharpCode.SharpZLib.Touch.csproj">
+      <Project>{28D0FFBC-5A7D-46DF-B966-453EE2ECCCF7}</Project>
+      <Name>ICSharpCode.SharpZLib.Touch</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\System.Net.Http.Formatting.Touch\System.Net.Http.Formatting.Touch.csproj">
+      <Project>{43A1E74A-B25E-4386-B800-4E181837ADDC}</Project>
+      <Name>System.Net.Http.Formatting.Touch</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\Couchbase.Lite.Droid\src\Attachment.cs">
+      <Link>src\Attachment.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Droid\src\Database.cs">
+      <Link>src\Database.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Droid\src\Document.cs">
+      <Link>src\Document.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Droid\src\Manager.cs">
+      <Link>src\Manager.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Droid\src\Query.cs">
+      <Link>src\Query.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Droid\src\Replication.cs">
+      <Link>src\Replication.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Droid\src\Revision.cs">
+      <Link>src\Revision.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Droid\src\View.cs">
+      <Link>src\View.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Droid\src\Auth\Authorizer.cs">
+      <Link>src\Auth\Authorizer.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Droid\src\Auth\FacebookAuthorizer.cs">
+      <Link>src\Auth\FacebookAuthorizer.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Droid\src\Auth\PersonaAuthorizer.cs">
+      <Link>src\Auth\PersonaAuthorizer.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Droid\src\Documents\AttachmentInternal.cs">
+      <Link>src\Documents\AttachmentInternal.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Droid\src\Documents\Body.cs">
+      <Link>src\Documents\Body.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Droid\src\Documents\DocumentChange.cs">
+      <Link>src\Documents\DocumentChange.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Droid\src\Documents\IValidationContext.cs">
+      <Link>src\Documents\IValidationContext.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Droid\src\Documents\TDContentOptions.cs">
+      <Link>src\Documents\TDContentOptions.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Droid\src\Documents\ValidationContext.cs">
+      <Link>src\Documents\ValidationContext.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Droid\src\Exceptions\CouchbaseLiteException.cs">
+      <Link>src\Exceptions\CouchbaseLiteException.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Droid\src\Extensions\SqliteExtensions.cs">
+      <Link>src\Extensions\SqliteExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Droid\src\Extensions\StreamExtensions.cs">
+      <Link>src\Extensions\StreamExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Droid\src\Manager\ManagerOptions.cs">
+      <Link>src\Manager\ManagerOptions.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Droid\src\Properties\AssemblyInfo.cs">
+      <Link>src\Properties\AssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Droid\src\Query\LiveQuery.cs">
+      <Link>src\Query\LiveQuery.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Droid\src\Query\QueryCompletedEventArgs.cs">
+      <Link>src\Query\QueryCompletedEventArgs.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Droid\src\Query\QueryEnumerator.cs">
+      <Link>src\Query\QueryEnumerator.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Droid\src\Query\QueryOptions.cs">
+      <Link>src\Query\QueryOptions.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Droid\src\Query\QueryRow.cs">
+      <Link>src\Query\QueryRow.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Droid\src\Replication\BatchProcessor.cs">
+      <Link>src\Replication\BatchProcessor.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Droid\src\Replication\Batcher.cs">
+      <Link>src\Replication\Batcher.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Droid\src\Replication\ChangeTracker.cs">
+      <Link>src\Replication\ChangeTracker.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Droid\src\Replication\ChangeTrackerBackoff.cs">
+      <Link>src\Replication\ChangeTrackerBackoff.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Droid\src\Replication\ChangeTrackerClient.cs">
+      <Link>src\Replication\ChangeTrackerClient.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Droid\src\Replication\CouchbaseLiteHttpClientFactory.cs">
+      <Link>src\Replication\CouchbaseLiteHttpClientFactory.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Droid\src\Replication\HttpResponseException.cs">
+      <Link>src\Replication\HttpResponseException.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Droid\src\Replication\MultipartDocumentReader.cs">
+      <Link>src\Replication\MultipartDocumentReader.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Droid\src\Replication\MultipartReader.cs">
+      <Link>src\Replication\MultipartReader.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Droid\src\Replication\MultipartReaderDelegate.cs">
+      <Link>src\Replication\MultipartReaderDelegate.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Droid\src\Replication\PulledRevision.cs">
+      <Link>src\Replication\PulledRevision.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Droid\src\Replication\Puller.cs">
+      <Link>src\Replication\Puller.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Droid\src\Replication\Pusher.cs">
+      <Link>src\Replication\Pusher.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Droid\src\Replication\ScheduledFuture.cs">
+      <Link>src\Replication\ScheduledFuture.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Droid\src\Revisions\ChangesOptions.cs">
+      <Link>src\Revisions\ChangesOptions.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Droid\src\Revisions\RevisionInternal.cs">
+      <Link>src\Revisions\RevisionInternal.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Droid\src\Revisions\RevisionList.cs">
+      <Link>src\Revisions\RevisionList.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Droid\src\Revisions\SavedRevision.cs">
+      <Link>src\Revisions\SavedRevision.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Droid\src\Revisions\UnsavedRevision.cs">
+      <Link>src\Revisions\UnsavedRevision.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Droid\src\Sharpen\AList.cs">
+      <Link>src\Sharpen\AList.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Droid\src\Sharpen\AbstractCollection.cs">
+      <Link>src\Sharpen\AbstractCollection.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Droid\src\Sharpen\AbstractList.cs">
+      <Link>src\Sharpen\AbstractList.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Droid\src\Sharpen\AbstractMap.cs">
+      <Link>src\Sharpen\AbstractMap.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Droid\src\Sharpen\AbstractSet.cs">
+      <Link>src\Sharpen\AbstractSet.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Droid\src\Sharpen\AccessController.cs">
+      <Link>src\Sharpen\AccessController.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Droid\src\Sharpen\Arrays.cs">
+      <Link>src\Sharpen\Arrays.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Droid\src\Sharpen\AtomicBoolean.cs">
+      <Link>src\Sharpen\AtomicBoolean.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Droid\src\Sharpen\AtomicInteger.cs">
+      <Link>src\Sharpen\AtomicInteger.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Droid\src\Sharpen\AtomicLong.cs">
+      <Link>src\Sharpen\AtomicLong.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Droid\src\Sharpen\AtomicReference.cs">
+      <Link>src\Sharpen\AtomicReference.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Droid\src\Sharpen\AtomicReferenceArray.cs">
+      <Link>src\Sharpen\AtomicReferenceArray.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Droid\src\Sharpen\BitSet.cs">
+      <Link>src\Sharpen\BitSet.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Droid\src\Sharpen\BufferedInputStream.cs">
+      <Link>src\Sharpen\BufferedInputStream.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Droid\src\Sharpen\BufferedOutputStream.cs">
+      <Link>src\Sharpen\BufferedOutputStream.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Droid\src\Sharpen\BufferedReader.cs">
+      <Link>src\Sharpen\BufferedReader.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Droid\src\Sharpen\BufferedWriter.cs">
+      <Link>src\Sharpen\BufferedWriter.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Droid\src\Sharpen\ByteArrayInputStream.cs">
+      <Link>src\Sharpen\ByteArrayInputStream.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Droid\src\Sharpen\ByteArrayOutputStream.cs">
+      <Link>src\Sharpen\ByteArrayOutputStream.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Droid\src\Sharpen\ByteBuffer.cs">
+      <Link>src\Sharpen\ByteBuffer.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Droid\src\Sharpen\ByteOrder.cs">
+      <Link>src\Sharpen\ByteOrder.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Droid\src\Sharpen\CRC32.cs">
+      <Link>src\Sharpen\CRC32.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Droid\src\Sharpen\Callable.cs">
+      <Link>src\Sharpen\Callable.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Droid\src\Sharpen\Channels.cs">
+      <Link>src\Sharpen\Channels.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Droid\src\Sharpen\CharBuffer.cs">
+      <Link>src\Sharpen\CharBuffer.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Droid\src\Sharpen\CharSequence.cs">
+      <Link>src\Sharpen\CharSequence.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Droid\src\Sharpen\CharUtils.cs">
+      <Link>src\Sharpen\CharUtils.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Droid\src\Sharpen\CharsetDecoder.cs">
+      <Link>src\Sharpen\CharsetDecoder.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Droid\src\Sharpen\CharsetEncoder.cs">
+      <Link>src\Sharpen\CharsetEncoder.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Droid\src\Sharpen\CodingErrorAction.cs">
+      <Link>src\Sharpen\CodingErrorAction.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Droid\src\Sharpen\Collections.cs">
+      <Link>src\Sharpen\Collections.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Droid\src\Sharpen\ConcurrentHashMap.cs">
+      <Link>src\Sharpen\ConcurrentHashMap.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Droid\src\Sharpen\ConcurrentMap.cs">
+      <Link>src\Sharpen\ConcurrentMap.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Droid\src\Sharpen\CopyOnWriteArrayList.cs">
+      <Link>src\Sharpen\CopyOnWriteArrayList.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Droid\src\Sharpen\CountDownLatch.cs">
+      <Link>src\Sharpen\CountDownLatch.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Droid\src\Sharpen\CyclicBarrier.cs">
+      <Link>src\Sharpen\CyclicBarrier.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Droid\src\Sharpen\DataConverter.cs">
+      <Link>src\Sharpen\DataConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Droid\src\Sharpen\DateFormat.cs">
+      <Link>src\Sharpen\DateFormat.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Droid\src\Sharpen\DeflaterOutputStream.cs">
+      <Link>src\Sharpen\DeflaterOutputStream.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Droid\src\Sharpen\DigestInputStream.cs">
+      <Link>src\Sharpen\DigestInputStream.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Droid\src\Sharpen\DigestOutputStream.cs">
+      <Link>src\Sharpen\DigestOutputStream.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Droid\src\Sharpen\EnumSet.cs">
+      <Link>src\Sharpen\EnumSet.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Droid\src\Sharpen\EnumerableWrapper.cs">
+      <Link>src\Sharpen\EnumerableWrapper.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Droid\src\Sharpen\EnumeratorWrapper.cs">
+      <Link>src\Sharpen\EnumeratorWrapper.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Droid\src\Sharpen\Exceptions.cs">
+      <Link>src\Sharpen\Exceptions.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Droid\src\Sharpen\Executor.cs">
+      <Link>src\Sharpen\Executor.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Droid\src\Sharpen\ExecutorService.cs">
+      <Link>src\Sharpen\ExecutorService.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Droid\src\Sharpen\Executors.cs">
+      <Link>src\Sharpen\Executors.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Droid\src\Sharpen\Extensions.cs">
+      <Link>src\Sharpen\Extensions.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Droid\src\Sharpen\FileChannel.cs">
+      <Link>src\Sharpen\FileChannel.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Droid\src\Sharpen\FileHelper.cs">
+      <Link>src\Sharpen\FileHelper.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Droid\src\Sharpen\FileInputStream.cs">
+      <Link>src\Sharpen\FileInputStream.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Droid\src\Sharpen\FileLock.cs">
+      <Link>src\Sharpen\FileLock.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Droid\src\Sharpen\FileOutputStream.cs">
+      <Link>src\Sharpen\FileOutputStream.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Droid\src\Sharpen\FilePath.cs">
+      <Link>src\Sharpen\FilePath.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Droid\src\Sharpen\FileReader.cs">
+      <Link>src\Sharpen\FileReader.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Droid\src\Sharpen\FileWriter.cs">
+      <Link>src\Sharpen\FileWriter.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Droid\src\Sharpen\FilenameFilter.cs">
+      <Link>src\Sharpen\FilenameFilter.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Droid\src\Sharpen\FilterInputStream.cs">
+      <Link>src\Sharpen\FilterInputStream.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Droid\src\Sharpen\FilterOutputStream.cs">
+      <Link>src\Sharpen\FilterOutputStream.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Droid\src\Sharpen\Future.cs">
+      <Link>src\Sharpen\Future.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Droid\src\Sharpen\GZIPInputStream.cs">
+      <Link>src\Sharpen\GZIPInputStream.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Droid\src\Sharpen\GZIPOutputStream.cs">
+      <Link>src\Sharpen\GZIPOutputStream.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Droid\src\Sharpen\HttpURLConnection.cs">
+      <Link>src\Sharpen\HttpURLConnection.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Droid\src\Sharpen\InflaterInputStream.cs">
+      <Link>src\Sharpen\InflaterInputStream.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Droid\src\Sharpen\InheritableThreadLocal.cs">
+      <Link>src\Sharpen\InheritableThreadLocal.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Droid\src\Sharpen\InputStream.cs">
+      <Link>src\Sharpen\InputStream.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Droid\src\Sharpen\InputStreamReader.cs">
+      <Link>src\Sharpen\InputStreamReader.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Droid\src\Sharpen\Iterable.cs">
+      <Link>src\Sharpen\Iterable.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Droid\src\Sharpen\Iterator.cs">
+      <Link>src\Sharpen\Iterator.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Droid\src\Sharpen\JavaCalendar.cs">
+      <Link>src\Sharpen\JavaCalendar.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Droid\src\Sharpen\LinkageError.cs">
+      <Link>src\Sharpen\LinkageError.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Droid\src\Sharpen\LinkedHashMap.cs">
+      <Link>src\Sharpen\LinkedHashMap.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Droid\src\Sharpen\LinkedHashSet.cs">
+      <Link>src\Sharpen\LinkedHashSet.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Droid\src\Sharpen\ListIterator.cs">
+      <Link>src\Sharpen\ListIterator.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Droid\src\Sharpen\MappedByteBuffer.cs">
+      <Link>src\Sharpen\MappedByteBuffer.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Droid\src\Sharpen\Matcher.cs">
+      <Link>src\Sharpen\Matcher.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Droid\src\Sharpen\MessageDigest.cs">
+      <Link>src\Sharpen\MessageDigest.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Droid\src\Sharpen\MessageFormat.cs">
+      <Link>src\Sharpen\MessageFormat.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Droid\src\Sharpen\ObjectInputStream.cs">
+      <Link>src\Sharpen\ObjectInputStream.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Droid\src\Sharpen\ObjectOutputStream.cs">
+      <Link>src\Sharpen\ObjectOutputStream.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Droid\src\Sharpen\OutputStream.cs">
+      <Link>src\Sharpen\OutputStream.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Droid\src\Sharpen\OutputStreamWriter.cs">
+      <Link>src\Sharpen\OutputStreamWriter.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Droid\src\Sharpen\PasswordAuthentication.cs">
+      <Link>src\Sharpen\PasswordAuthentication.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Droid\src\Sharpen\Pattern.cs">
+      <Link>src\Sharpen\Pattern.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Droid\src\Sharpen\PipedInputStream.cs">
+      <Link>src\Sharpen\PipedInputStream.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Droid\src\Sharpen\PipedOutputStream.cs">
+      <Link>src\Sharpen\PipedOutputStream.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Droid\src\Sharpen\PrintWriter.cs">
+      <Link>src\Sharpen\PrintWriter.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Droid\src\Sharpen\PrivilegedAction.cs">
+      <Link>src\Sharpen\PrivilegedAction.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Droid\src\Sharpen\Process.cs">
+      <Link>src\Sharpen\Process.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Droid\src\Sharpen\Proxy.cs">
+      <Link>src\Sharpen\Proxy.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Droid\src\Sharpen\ProxySelector.cs">
+      <Link>src\Sharpen\ProxySelector.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Droid\src\Sharpen\RandomAccessFile.cs">
+      <Link>src\Sharpen\RandomAccessFile.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Droid\src\Sharpen\ReentrantLock.cs">
+      <Link>src\Sharpen\ReentrantLock.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Droid\src\Sharpen\Reference.cs">
+      <Link>src\Sharpen\Reference.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Droid\src\Sharpen\ReferenceQueue.cs">
+      <Link>src\Sharpen\ReferenceQueue.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Droid\src\Sharpen\ResourceBundle.cs">
+      <Link>src\Sharpen\ResourceBundle.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Droid\src\Sharpen\Runnable.cs">
+      <Link>src\Sharpen\Runnable.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Droid\src\Sharpen\Runtime.cs">
+      <Link>src\Sharpen\Runtime.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Droid\src\Sharpen\SSLContext.cs">
+      <Link>src\Sharpen\SSLContext.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Droid\src\Sharpen\ScheduledExecutorService.cs">
+      <Link>src\Sharpen\ScheduledExecutorService.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Droid\src\Sharpen\ScheduledThreadPoolExecutor.cs">
+      <Link>src\Sharpen\ScheduledThreadPoolExecutor.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Droid\src\Sharpen\SimpleDateFormat.cs">
+      <Link>src\Sharpen\SimpleDateFormat.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Droid\src\Sharpen\SingletonList.cs">
+      <Link>src\Sharpen\SingletonList.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Droid\src\Sharpen\SoftReference.cs">
+      <Link>src\Sharpen\SoftReference.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Droid\src\Sharpen\StackOverflowError.cs">
+      <Link>src\Sharpen\StackOverflowError.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Droid\src\Sharpen\String.cs">
+      <Link>src\Sharpen\String.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Droid\src\Sharpen\StringTokenizer.cs">
+      <Link>src\Sharpen\StringTokenizer.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Droid\src\Sharpen\SynchronizedList.cs">
+      <Link>src\Sharpen\SynchronizedList.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Droid\src\Sharpen\Thread.cs">
+      <Link>src\Sharpen\Thread.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Droid\src\Sharpen\ThreadFactory.cs">
+      <Link>src\Sharpen\ThreadFactory.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Droid\src\Sharpen\ThreadPoolExecutor.cs">
+      <Link>src\Sharpen\ThreadPoolExecutor.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Droid\src\Sharpen\TimeUnit.cs">
+      <Link>src\Sharpen\TimeUnit.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Droid\src\Sharpen\TreeSet.cs">
+      <Link>src\Sharpen\TreeSet.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Droid\src\Sharpen\TrustManager.cs">
+      <Link>src\Sharpen\TrustManager.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Droid\src\Sharpen\URLEncoder.cs">
+      <Link>src\Sharpen\URLEncoder.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Droid\src\Sharpen\Uri.cs">
+      <Link>src\Sharpen\Uri.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Droid\src\Sharpen\WeakReference.cs">
+      <Link>src\Sharpen\WeakReference.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Droid\src\Sharpen\WrappedSystemStream.cs">
+      <Link>src\Sharpen\WrappedSystemStream.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Droid\src\Sharpen\X509Certificate.cs">
+      <Link>src\Sharpen\X509Certificate.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Droid\src\Sharpen\X509TrustManager.cs">
+      <Link>src\Sharpen\X509TrustManager.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Droid\src\Store\BlobKey.cs">
+      <Link>src\Store\BlobKey.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Droid\src\Store\BlobStore.cs">
+      <Link>src\Store\BlobStore.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Droid\src\Store\BlobStoreWriter.cs">
+      <Link>src\Store\BlobStoreWriter.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Droid\src\Store\ConflictResolutionStrategy.cs">
+      <Link>src\Store\ConflictResolutionStrategy.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Droid\src\Store\ContentValues.cs">
+      <Link>src\Store\ContentValues.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Droid\src\Store\CouchbaseSqliteCollationFunctions.cs">
+      <Link>src\Store\CouchbaseSqliteCollationFunctions.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Droid\src\Store\Cursor.cs">
+      <Link>src\Store\Cursor.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Droid\src\Store\JsonCollator.cs">
+      <Link>src\Store\JsonCollator.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Droid\src\Store\MonoSQLiteStorageEngine.cs">
+      <Link>src\Store\MonoSQLiteStorageEngine.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Droid\src\Store\SQLException.cs">
+      <Link>src\Store\SQLException.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Droid\src\Store\SQLiteStorageEngine.cs">
+      <Link>src\Store\SQLiteStorageEngine.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Droid\src\Store\SQLiteStorageEngineFactory.cs">
+      <Link>src\Store\SQLiteStorageEngineFactory.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Droid\src\Store\Status.cs">
+      <Link>src\Store\Status.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Droid\src\Util\DefaultAuthHandler.cs">
+      <Link>src\Util\DefaultAuthHandler.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Droid\src\Util\ExtensionMethods.cs">
+      <Link>src\Util\ExtensionMethods.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Droid\src\Util\FileDirUtils.cs">
+      <Link>src\Util\FileDirUtils.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Droid\src\Util\IHttpClientFactory.cs">
+      <Link>src\Util\IHttpClientFactory.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Droid\src\Util\ILogger.cs">
+      <Link>src\Util\ILogger.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Droid\src\Util\Log.cs">
+      <Link>src\Util\Log.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Droid\src\Util\LoggerFactory.cs">
+      <Link>src\Util\LoggerFactory.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Droid\src\Util\LruCache.cs">
+      <Link>src\Util\LruCache.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Droid\src\Util\Misc.cs">
+      <Link>src\Util\Misc.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Droid\src\Util\ObjectWriter.cs">
+      <Link>src\Util\ObjectWriter.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Droid\src\Util\Range.cs">
+      <Link>src\Util\Range.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Droid\src\Util\RemoteRequestCompletionBlock.cs">
+      <Link>src\Util\RemoteRequestCompletionBlock.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Droid\src\Util\SequenceMap.cs">
+      <Link>src\Util\SequenceMap.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Droid\src\Util\StringUtils.cs">
+      <Link>src\Util\StringUtils.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Droid\src\Util\SystemLogger.cs">
+      <Link>src\Util\SystemLogger.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Droid\src\Util\URIUtils.cs">
+      <Link>src\Util\URIUtils.cs</Link>
+    </Compile>
+  </ItemGroup>
+</Project>
