@@ -3,6 +3,7 @@
 //
 // Author:
 //	Zachary Gramana  <zack@xamarin.com>
+//  Pasin Suriyentrakorn <pasin@couchbase.com>
 //
 // Copyright (c) 2013, 2014 Xamarin Inc (http://www.xamarin.com)
 //
@@ -43,7 +44,6 @@
 */
 
 using System;
-using System.Collections.Generic;
 using System.IO;
 using Couchbase.Lite;
 using Couchbase.Lite.Internal;
@@ -55,6 +55,8 @@ using Sharpen;
 using Couchbase.Lite.Tests;
 using System.Diagnostics;
 using System.Net;
+using System.Collections;
+using System.Collections.Generic;
 
 namespace Couchbase.Lite
 {
@@ -71,12 +73,16 @@ namespace Couchbase.Lite
 
 		protected internal string DefaultTestDb = "cblitetest";
 
-		/// <exception cref="System.Exception"></exception>
 		//[TestFixtureSetUp]
+        protected void Init()
+        {
+			//Trace.Listeners.Add(new ConsoleTraceListener());
+        }
+
+		//[SetUp]
 		protected virtual void SetUp()
 		{
-			//Trace.Listeners.Add(new ConsoleTraceListener());
-			Log.V(Tag, "setUp");
+            Log.V(Tag, "SetUp");
             LoadCustomProperties();
 			StartCBLite();
             StartDatabase();
@@ -241,8 +247,7 @@ namespace Couchbase.Lite
             return new Uri(string.Format("{0}://{1}:{2}/{3}", GetReplicationProtocol(), GetReplicationServer(), GetReplicationPort(), GetReplicationDatabase()));
 		}
 
-		/// <exception cref="System.Exception"></exception>
-		//[TestFixtureTearDown]
+		//[TearDown]
 		protected virtual void TearDown()
 		{
 			Log.V(Tag, "tearDown");
@@ -253,7 +258,7 @@ namespace Couchbase.Lite
 		protected internal virtual IDictionary<string, object> UserProperties(IDictionary
 			<string, object> properties)
 		{
-			IDictionary<string, object> result = new Dictionary<string, object>();
+            var result = new Dictionary<string, object>();
 			foreach (string key in properties.Keys)
 			{
 				if (!key.StartsWith ("_", StringComparison.Ordinal))
@@ -387,5 +392,96 @@ namespace Couchbase.Lite
 		{
             return SendBody(method, path, null, (int)expectedStatus, expectedResult);
 		}
+
+        protected internal void CreateDocuments(Database db, int n) {
+            for (int i = 0; i < n; i++) {
+                var properties = new Dictionary<string, object>();
+                properties.Add("testName", "testDatabase");
+                properties.Add("sequence", i);
+                CreateDocumentWithProperties(db, properties);
+            }
+        }
+
+        protected internal Document CreateDocumentWithProperties(Database db, IDictionary<string, object> properties) 
+        {
+            var doc = db.CreateDocument();
+
+            Assert.IsNotNull(doc);
+            Assert.IsNull(doc.CurrentRevisionId);
+            Assert.IsNull(doc.CurrentRevision);
+            Assert.IsNotNull(doc.Id, "Document has no ID");
+
+            try
+            {
+                doc.PutProperties(properties);
+            } 
+            catch (Exception e)
+            {
+                Log.E(Tag, "Error creating document", e);
+                Assert.IsTrue(false, "can't create new document in db:" + db.Name + " with properties:" + properties.ToString());
+            }
+
+            Assert.IsNotNull(doc.Id);
+            Assert.IsNotNull(doc.CurrentRevisionId);
+            Assert.IsNotNull(doc.CurrentRevision);
+
+            Assert.AreEqual(db.GetDocument(doc.Id), doc);
+            Assert.AreEqual(db.GetDocument(doc.Id).Id, doc.Id);
+
+            return doc;
+        }
+            
+        protected internal void AssertEnumerablesAreEqual(
+            IEnumerable list1, 
+            IEnumerable list2)
+        {
+            var enumerator1 = list1.GetEnumerator();
+            var enumerator2 = list2.GetEnumerator();
+
+            while (enumerator1.MoveNext() && enumerator2.MoveNext())
+            {
+                var obj1 = enumerator1.Current;
+                var obj2 = enumerator1.Current;
+
+                if (obj1 is IDictionary<string, object> && obj2 is IDictionary<string, object>) 
+                {
+                    AssertPropertiesAreEqual((IDictionary<string, object>)obj1, (IDictionary<string, object>)obj2);
+                }
+                else if (obj1 is IEnumerable && obj2 is IEnumerable)
+                {
+                    AssertEnumerablesAreEqual((IEnumerable)obj1, (IEnumerable)obj2);
+                }
+                else
+                {
+                    Assert.AreEqual(obj1, obj2);
+                }
+            }
+        }
+
+        protected internal void AssertPropertiesAreEqual(
+            IDictionary<string, object> prop1,
+            IDictionary<string, object> prop2)
+        {
+            Assert.AreEqual(prop1.Count, prop2.Count);
+            foreach(var key in prop1.Keys) 
+            {
+                Assert.IsTrue(prop1.ContainsKey(key));
+                object obj1 = prop1[key];
+                object obj2 = prop2[key];
+
+                if (obj1 is IDictionary && obj2 is IDictionary) 
+                {
+                    AssertPropertiesAreEqual((IDictionary<string, object>)obj1, (IDictionary<string, object>)obj2);
+                }
+                else if (obj1 is IEnumerable && obj2 is IEnumerable)
+                {
+                    AssertEnumerablesAreEqual((IEnumerable)obj1, (IEnumerable)obj2);
+                }
+                else
+                {
+                    Assert.AreEqual(obj1, obj2);
+                }
+            }
+        }
 	}
 }

@@ -55,6 +55,7 @@ using System.Net;
 using System.Net.Http;
 using System.Web;
 using System.Threading;
+//using System.Web.UI;
 using System.Threading.Tasks;
 //using Newtonsoft.Json.Linq;
 
@@ -273,25 +274,24 @@ namespace Couchbase.Lite.Replicator
 
 				AddRequestHeaders(Request);
 
-				// JOSH
 				// if the URL contains user info AND if this a DefaultHttpClient
                 // then preemptively set/update the auth credentials
-//				if (url.UserInfo != null)
-//				{
-//					Log.V(Tag, "url.getUserInfo(): " + url.GetUserInfo());
-//
-//                    var credentials = Request.ToCredentialsFromUri();
-//                    if (credentials != null)
-//					{
-//                        var handler = client.HttpHandler;
-//                        if (handler.Credentials == null || !handler.Credentials.Equals(credentials))
-//                            client.HttpHandler.Credentials = credentials;
-//					}
-//					else
-//					{
-//                        Log.W(Tag, this + ": ChangeTracker Unable to parse user info, not setting credentials");
-//					}
-//				}
+                if (!String.IsNullOrEmpty(url.UserInfo))
+				{
+					Log.V(Tag, "url.getUserInfo(): " + url.GetUserInfo());
+
+                    var credentials = Request.ToCredentialsFromUri();
+                    if (credentials != null)
+					{
+                        var handler = client.HttpHandler;
+                        if (handler.Credentials == null || !handler.Credentials.Equals(credentials))
+                            client.HttpHandler.Credentials = credentials;
+					}
+					else
+					{
+                        Log.W(Tag, this + ": ChangeTracker Unable to parse user info, not setting credentials");
+					}
+				}
 
 				try
 				{
@@ -316,7 +316,7 @@ namespace Couchbase.Lite.Replicator
                         {
                             if (request.Status != System.Threading.Tasks.TaskStatus.RanToCompletion && request.IsFaulted)
                             {
-                                Log.E(Tag, this + ": Change tracker got error " + Sharpen.Extensions.ToString(request.Status));
+                                Log.E(Tag, this + ": Change tracker got error " + Extensions.ToString(request.Status));
                                 throw request.Exception;
                             }
                             return request.Result;

@@ -43,9 +43,7 @@
 */
 using System;
 using System.Linq;
-using System.Collections;
 using System.Collections.Generic;
-using System.Net;
 using System.IO;
 using Sharpen;
 using Couchbase.Lite.Util;
@@ -64,6 +62,8 @@ namespace Couchbase.Lite
 
     public partial class Database 
     {
+
+        Document debugDoc;
     
     #region Constructors
 
@@ -186,6 +186,10 @@ namespace Couchbase.Lite
                     if (cursor.MoveToNext())
                     {
                         result = cursor.GetLong(0);
+
+                        // When there is no rows in revs table, the result is -1 which is different
+                        // from the Android platform.
+                        if (result < 0) result = 0;
                     }
                 }
                 catch (SQLException e)
@@ -697,7 +701,7 @@ namespace Couchbase.Lite
 
         internal const String TagSql = "CBLSQL";
        
-        const Int32 BigAttachmentLength = 16384;
+        internal const Int32 BigAttachmentLength = 16384;
 
         const Int32 MaxDocCacheSize = 50;
 
@@ -711,7 +715,7 @@ CREATE INDEX docs_docid ON docs(docid);
 CREATE TABLE revs ( 
   sequence INTEGER PRIMARY KEY AUTOINCREMENT, 
   doc_id INTEGER NOT NULL REFERENCES docs(doc_id) ON DELETE CASCADE, 
-  revid TEXT NOT NULL, 
+  revid TEXT NOT NULL COLLATE REVID, 
   parent INTEGER REFERENCES revs(sequence) ON DELETE SET NULL, 
   current BOOLEAN, 
   deleted BOOLEAN DEFAULT 0, 
@@ -721,7 +725,7 @@ CREATE INDEX revs_current ON revs(doc_id, current);
 CREATE INDEX revs_parent ON revs(parent); 
 CREATE TABLE localdocs ( 
   docid TEXT UNIQUE NOT NULL, 
-  revid TEXT NOT NULL, 
+  revid TEXT NOT NULL COLLATE REVID, 
   json BLOB); 
 CREATE INDEX localdocs_by_docid ON localdocs(docid); 
 CREATE TABLE views ( 
@@ -881,8 +885,7 @@ PRAGMA user_version = 3;";
             return string.Format("_local/{0}", documentId);
         }
 
-		//private 
-		internal RevisionInternal PutLocalRevision(RevisionInternal revision, string prevRevID)
+        internal RevisionInternal PutLocalRevision(RevisionInternal revision, string prevRevID)
         {
             var docID = revision.GetDocId();
             if (!docID.StartsWith ("_local/", StringComparison.InvariantCultureIgnoreCase))
@@ -1323,10 +1326,12 @@ PRAGMA user_version = 3;";
             if (!String.IsNullOrEmpty (viewName)) {
                 var view = GetView (viewName);
                 if (view == null)
+                {
                     throw new CouchbaseLiteException (StatusCode.NotFound);
-
+                }
+                    
                 lastSequence = view.LastSequenceIndexed;
-                if (options.GetStale () == IndexUpdateMode.Never || lastSequence <= 0) {
+                if (options.GetStale () == IndexUpdateMode.Before || lastSequence <= 0) {
                     view.UpdateIndex ();
                     lastSequence = view.LastSequenceIndexed;
                 } else {
@@ -1357,8 +1362,10 @@ PRAGMA user_version = 3;";
                 lastSequence = GetLastSequenceNumber ();
             }
             outLastSequence.AddItem(lastSequence);
+
             var delta = Runtime.CurrentTimeMillis() - before;
             Log.D(Database.Tag, String.Format("Query view {0} completed in {1} milliseconds", viewName, delta));
+
             return rows;
         }
 
@@ -1811,6 +1818,35 @@ PRAGMA user_version = 3;";
                     return GetView(name);
                 }
             }
+        }
+
+        internal IList<View> GetAllViews()
+        {
+            Cursor cursor = null;
+            IList<View> result = null;
+            try
+            {
+                cursor = StorageEngine.RawQuery("SELECT name FROM views", null);
+                result = new AList<View>();
+                if (cursor.MoveToNext())
+                {
+                    var name = cursor.GetString(0);
+                    var view = GetView(name);
+                    result.Add(view);
+                }
+            }
+            catch (Exception e)
+            {
+                Log.E(Tag, "Error getting all views", e);
+            }
+            finally
+            {
+                if (cursor != null)
+                {
+                    cursor.Close();
+                }
+            }
+            return result;
         }
 
         internal Status DeleteViewNamed(String name)
@@ -2611,7 +2647,7 @@ PRAGMA user_version = 3;";
             return MakeRevisionHistoryDict(GetRevisionHistory(rev));
         }
 
-        private static IDictionary<string, object> MakeRevisionHistoryDict(IList<RevisionInternal> history)
+        internal static IDictionary<string, object> MakeRevisionHistoryDict(IList<RevisionInternal> history)
         {
             if (history == null)
                 return null;
@@ -2689,7 +2725,7 @@ PRAGMA user_version = 3;";
         }
 
         // Splits a revision ID into its generation number and opaque suffix string
-        private static int ParseRevIDNumber(string rev)
+        internal static int ParseRevIDNumber(string rev)
         {
             var result = -1;
             var dashPos = rev.IndexOf("-", StringComparison.InvariantCultureIgnoreCase);
@@ -2698,10 +2734,21 @@ PRAGMA user_version = 3;";
             {
                 try
                 {
-                    result = Convert.ToInt32(Runtime.Substring(rev, 0, dashPos));
+                    var revIdStr = rev.Substring(0, dashPos);
+
+                    // Should return -1 when the string has WC at the beginning or at the end.
+                    if (revIdStr.Length > 0 && 
+                        (char.IsWhiteSpace(revIdStr[0]) || 
+                            char.IsWhiteSpace(revIdStr[revIdStr.Length - 1])))
+                    {
+                        return result;
+                    }
+
+                    result = Int32.Parse(revIdStr);
                 }
                 catch (FormatException)
                 {
+
                 }
             }
             // ignore, let it return -1
@@ -2709,7 +2756,7 @@ PRAGMA user_version = 3;";
         }
 
         // Splits a revision ID into its generation number and opaque suffix string
-        private static string ParseRevIDSuffix(string rev)
+        internal static string ParseRevIDSuffix(string rev)
         {
             var result = String.Empty;
             int dashPos = rev.IndexOf("-", StringComparison.InvariantCultureIgnoreCase);
@@ -2750,7 +2797,7 @@ PRAGMA user_version = 3;";
                     var key = new BlobKey(keyData);
                     var digestString = "sha1-" + Convert.ToBase64String(keyData);
 
-                    var dataBase64 = String.Empty;
+                    var dataBase64 = (string) null;
                     if (contentOptions.Contains(TDContentOptions.TDIncludeAttachments))
                     {
                         if (contentOptions.Contains(TDContentOptions.TDBigAttachmentsFollow) && 
@@ -3425,9 +3472,15 @@ PRAGMA user_version = 3;";
                 {
                     args["parent"] = parentSequence;
                 }
+
                 args["current"] = current;
                 args.Put("deleted", rev.IsDeleted());
-                args.Put("json", data.ToArray());
+
+                if (data != null)
+                {
+                    args.Put("json", data.ToArray());
+                }
+
                 rowId = StorageEngine.Insert("revs", null, args);
                 rev.SetSequence(rowId);
             }
@@ -4001,7 +4054,7 @@ PRAGMA user_version = 3;";
 
                 foreach (long id in toPrune.Keys)
                 {
-                    string minIDToKeep = string.Format("%d-", (toPrune.Get(id) + 1));
+                    string minIDToKeep = String.Format("{0}-", (toPrune.Get(id) + 1));
                     string[] deleteArgs = new string[] { System.Convert.ToString(docNumericID), minIDToKeep };
                     int rowsDeleted = StorageEngine.Delete("revs", "doc_id=? AND revid < ? AND current=0", deleteArgs);
                     outPruned += rowsDeleted;
@@ -4025,11 +4078,6 @@ PRAGMA user_version = 3;";
 
 
     #endregion
-    
-    #region Delegates
-        public delegate Boolean RunInTransactionDelegate();
-
-    #endregion
     
     #region EventArgs Subclasses
         public class DatabaseChangeEventArgs : EventArgs {
@@ -4059,7 +4107,7 @@ PRAGMA user_version = 3;";
 
     public delegate FilterDelegate CompileFilterDelegate(String source, String language);
 
-
+    public delegate Boolean RunInTransactionDelegate();
 
     #endregion
 }

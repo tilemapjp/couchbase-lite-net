@@ -111,10 +111,14 @@
     <Reference Include="System.Net" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Web.Services" />
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\System.Net.Http.Formatting.Touch\lib\Newtonsoft.Json.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />
     <Folder Include="Util\" />
+    <Folder Include="Assets\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
@@ -123,7 +127,6 @@
   <ItemGroup>
     <Compile Include="Main.cs" />
     <Compile Include="UnitTestAppDelegate.cs" />
-    <Compile Include="TestsSample.cs" />
     <Compile Include="LiteTestCase.cs" />
     <Compile Include="ApiTest.cs" />
     <Compile Include="Util\ExtensionMethods.cs" />
@@ -131,6 +134,15 @@
     <Compile Include="CRUDOperationsTest.cs" />
     <Compile Include="LocalDocsTest.cs" />
     <Compile Include="ManagerTest.cs" />
+    <Compile Include="ViewsTest.cs" />
+    <Compile Include="ValidationsTest.cs" />
+    <Compile Include="SequenceMapTest.cs" />
+    <Compile Include="RevTreeTest.cs" />
+    <Compile Include="MiscTest.cs" />
+    <Compile Include="ChangesTest.cs" />
+    <Compile Include="BlobStoreWriterTest.cs" />
+    <Compile Include="Base64Test.cs" />
+    <Compile Include="AttachmentsTest.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
@@ -138,5 +150,22 @@
       <Project>{F2C2ACC0-5AC0-4EA7-8D2C-ACE2FA683845}</Project>
       <Name>Couchbase.Lite.Touch</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="..\Couchbase.Lite.Tests\Assets\attachment.png">
+      <Link>Assets\attachment.png</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\Couchbase.Lite.Tests\Assets\attachment2.png">
+      <Link>Assets\attachment2.png</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\Couchbase.Lite.Tests\Assets\GatewayConfig.json">
+      <Link>Assets\GatewayConfig.json</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\Couchbase.Lite.Tests\Assets\local-test.properties">
+      <Link>Assets\local-test.properties</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\Couchbase.Lite.Tests\Assets\test.properties">
+      <Link>Assets\test.properties</Link>
+    </EmbeddedResource>
   </ItemGroup>
 </Project>

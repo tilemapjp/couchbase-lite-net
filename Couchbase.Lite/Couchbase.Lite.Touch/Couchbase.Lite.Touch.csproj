@@ -647,5 +647,8 @@
     <Compile Include="..\Couchbase.Lite.Droid\src\Util\URIUtils.cs">
       <Link>src\Util\URIUtils.cs</Link>
     </Compile>
+    <Compile Include="..\Couchbase.Lite.Droid\src\Store\RevIdCollator.cs">
+      <Link>src\Store\RevIdCollator.cs</Link>
+    </Compile>
   </ItemGroup>
 </Project>

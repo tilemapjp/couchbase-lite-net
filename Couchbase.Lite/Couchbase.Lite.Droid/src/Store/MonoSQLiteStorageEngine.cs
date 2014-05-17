@@ -56,6 +56,7 @@ using System.Text;
 using System.Data.SqlClient;
 using System.Diagnostics;
 using System.Threading;
+//using System.Web.UI;
 using System.Runtime.InteropServices;
 
 namespace Couchbase.Lite.Storage
@@ -67,9 +68,10 @@ namespace Couchbase.Lite.Storage
         {
             // Ensure Sqlite provider uses our custom collation function
             // that works directly on JSON encoded functions.
-            SqliteFunction.RegisterFunction(typeof(CouchbaseSqliteUnicodeCollationFunction));
-            SqliteFunction.RegisterFunction(typeof(CouchbaseSqliteAsciiCollationFunction));
-            SqliteFunction.RegisterFunction(typeof(CouchbaseSqliteRawCollationFunction));
+            SqliteFunction.RegisterFunction(typeof(CouchbaseSqliteJsonUnicodeCollationFunction));
+            SqliteFunction.RegisterFunction(typeof(CouchbaseSqliteJsonAsciiCollationFunction));
+            SqliteFunction.RegisterFunction(typeof(CouchbaseSqliteJsonRawCollationFunction));
+            SqliteFunction.RegisterFunction(typeof(CouchbaseSqliteRevIdCollationFunction));
         }
 
         private const String Tag = "MonoSQLiteStorageEngine";
@@ -430,18 +432,15 @@ namespace Couchbase.Lite.Storage
         SqliteCommand GetDeleteCommand (string table, string whereClause, string[] whereArgs)
         {
             var builder = new StringBuilder("DELETE FROM ");
-
             builder.Append(table);
-
-            var command = new SqliteCommand(builder.ToString(), Connection, currentTransaction);
-            command.Parameters.Clear();
-
             if (!whereClause.IsEmpty()) {
                 builder.Append(" WHERE ");
                 builder.Append(whereClause.ReplacePositionalParams());
-                command.Parameters.AddRange(whereArgs.ToSqliteParameters());
             }
 
+            var command = new SqliteCommand(builder.ToString(), Connection, currentTransaction);
+            command.Parameters.Clear();
+            command.Parameters.AddRange(whereArgs.ToSqliteParameters());
 
             return command;
         }

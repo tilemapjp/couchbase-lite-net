@@ -1,5 +1,5 @@
 //
-// DocumentChange.cs
+// SequenceMapTest.cs
 //
 // Author:
 //	Zachary Gramana  <zack@xamarin.com>
@@ -41,46 +41,62 @@
 * either express or implied. See the License for the specific language governing permissions
 * and limitations under the License.
 */
-using System;
-using System.Linq;
-using System.Collections;
-using System.Collections.Generic;
-using System.Net;
-using System.IO;
-using Couchbase.Lite.Util;
-using Couchbase.Lite.Internal;
+
+using Couchbase.Lite;
+using Couchbase.Lite.Support;
+using NUnit.Framework;
 using Sharpen;
 
-namespace Couchbase.Lite {
+namespace Couchbase.Lite
+{
+	[TestFixture]
+	public class SequenceMapTest : LiteTestCase
+	{
+		[SetUp]
+		protected override void SetUp ()
+		{
+			base.SetUp ();
+		}
 
-    public partial class DocumentChange
-    {
-        internal RevisionInternal AddedRevision { get; private set; }
+		[TearDown]
+		protected override void TearDown ()
+		{
+			base.TearDown ();
+		}
 
-        internal DocumentChange(RevisionInternal addedRevision, RevisionInternal winningRevision, bool isConflict, Uri sourceUrl)
-        {
-            AddedRevision = addedRevision;
-            WinningRevision = winningRevision;
-            IsConflict = isConflict;
-            SourceUrl = sourceUrl;
-        }
-    
-    #region Instance Members
-        //Properties
-        public String DocumentId { get { return AddedRevision.GetDocId(); } }
-
-        public String RevisionId { get { return AddedRevision.GetRevId(); } }
-
-        public Boolean IsCurrentRevision { get { return WinningRevision != null && WinningRevision.GetRevId().Equals(AddedRevision.GetRevId()); } }
-
-        public RevisionInternal WinningRevision { get; private set; }
-
-        public Boolean IsConflict { get; private set; }
-
-        public Uri SourceUrl { get; private set; }
-
-    #endregion
-
-    }
-
+        [Test]
+		public void TestSequenceMap()
+		{
+            var map = new SequenceMap();
+			Assert.AreEqual(0, map.GetCheckpointedSequence());
+			Assert.AreEqual(null, map.GetCheckpointedValue());
+			Assert.IsTrue(map.IsEmpty());
+			Assert.AreEqual(1, map.AddValue("one"));
+			Assert.AreEqual(0, map.GetCheckpointedSequence());
+			Assert.AreEqual(null, map.GetCheckpointedValue());
+			Assert.IsTrue(!map.IsEmpty());
+			Assert.AreEqual(2, map.AddValue("two"));
+			Assert.AreEqual(0, map.GetCheckpointedSequence());
+			Assert.AreEqual(null, map.GetCheckpointedValue());
+			Assert.AreEqual(3, map.AddValue("three"));
+			Assert.AreEqual(0, map.GetCheckpointedSequence());
+			Assert.AreEqual(null, map.GetCheckpointedValue());
+			map.RemoveSequence(2);
+			Assert.AreEqual(0, map.GetCheckpointedSequence());
+			Assert.AreEqual(null, map.GetCheckpointedValue());
+			map.RemoveSequence(1);
+			Assert.AreEqual(2, map.GetCheckpointedSequence());
+			Assert.AreEqual("two", map.GetCheckpointedValue());
+			Assert.AreEqual(4, map.AddValue("four"));
+			Assert.AreEqual(2, map.GetCheckpointedSequence());
+			Assert.AreEqual("two", map.GetCheckpointedValue());
+			map.RemoveSequence(3);
+			Assert.AreEqual(3, map.GetCheckpointedSequence());
+			Assert.AreEqual("three", map.GetCheckpointedValue());
+			map.RemoveSequence(4);
+			Assert.AreEqual(4, map.GetCheckpointedSequence());
+			Assert.AreEqual("four", map.GetCheckpointedValue());
+			Assert.IsTrue(map.IsEmpty());
+		}
+	}
 }

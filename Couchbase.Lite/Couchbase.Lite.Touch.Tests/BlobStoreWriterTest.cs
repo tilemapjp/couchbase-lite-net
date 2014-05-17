@@ -1,5 +1,5 @@
 //
-// DocumentChange.cs
+// BlobStoreWriterTest.cs
 //
 // Author:
 //	Zachary Gramana  <zack@xamarin.com>
@@ -41,46 +41,64 @@
 * either express or implied. See the License for the specific language governing permissions
 * and limitations under the License.
 */
-using System;
-using System.Linq;
-using System.Collections;
-using System.Collections.Generic;
-using System.Net;
+
 using System.IO;
-using Couchbase.Lite.Util;
-using Couchbase.Lite.Internal;
+using Couchbase.Lite;
+using NUnit.Framework;
 using Sharpen;
 
-namespace Couchbase.Lite {
+//#if __IOS__
+//using MonoTouch;
+//using MonoTouch.Foundation;
+//#else
+//using Android.App;
+//using Android.Content;
+//#endif
 
-    public partial class DocumentChange
-    {
-        internal RevisionInternal AddedRevision { get; private set; }
+namespace Couchbase.Lite
+{
+	[TestFixture]
+	public class BlobStoreWriterTest : LiteTestCase
+	{
+		[SetUp]
+		protected override void SetUp ()
+		{
+			base.SetUp ();
+		}
 
-        internal DocumentChange(RevisionInternal addedRevision, RevisionInternal winningRevision, bool isConflict, Uri sourceUrl)
-        {
-            AddedRevision = addedRevision;
-            WinningRevision = winningRevision;
-            IsConflict = isConflict;
-            SourceUrl = sourceUrl;
-        }
-    
-    #region Instance Members
-        //Properties
-        public String DocumentId { get { return AddedRevision.GetDocId(); } }
+		[TearDown]
+		protected override void TearDown ()
+		{
+			base.TearDown ();
+		}
 
-        public String RevisionId { get { return AddedRevision.GetRevId(); } }
+		/// <exception cref="System.Exception"></exception>
+        [Test]
+        public void TestBasicOperation()
+		{
+			//#if __IOS__
+			//var bundlePath = NSBundle.MainBundle.BundlePath;
+			//var filePath   = Path.Combine(bundlePath, "Assets/attachment.png");
+			//InputStream attachmentStream = File.OpenRead(filePath);
+			//#else
+			//InputStream attachmentStream = Application.Context.Assets.Open ("attachment.png");
+			//#endif
+			InputStream attachmentStream = GetAsset("attachment.png");
 
-        public Boolean IsCurrentRevision { get { return WinningRevision != null && WinningRevision.GetRevId().Equals(AddedRevision.GetRevId()); } }
+            var memoryStream = new MemoryStream();
+            attachmentStream.Wrapped.CopyTo(memoryStream);
+            byte[] bytes = memoryStream.ToArray();
 
-        public RevisionInternal WinningRevision { get; private set; }
+            BlobStore attachments = database.Attachments;
+			BlobStoreWriter blobStoreWriter = new BlobStoreWriter(attachments);
+            blobStoreWriter.AppendData(bytes);
+			blobStoreWriter.Finish();
+			blobStoreWriter.Install();
+			string sha1DigestKey = blobStoreWriter.SHA1DigestString();
+			BlobKey keyFromSha1 = new BlobKey(sha1DigestKey);
+			Assert.IsTrue(attachments.GetSizeOfBlob(keyFromSha1) == bytes.Length);
+		}
 
-        public Boolean IsConflict { get; private set; }
 
-        public Uri SourceUrl { get; private set; }
-
-    #endregion
-
-    }
-
+	}
 }

@@ -1,5 +1,5 @@
 //
-// DocumentChange.cs
+// MiscTest.cs
 //
 // Author:
 //	Zachary Gramana  <zack@xamarin.com>
@@ -41,46 +41,35 @@
 * either express or implied. See the License for the specific language governing permissions
 * and limitations under the License.
 */
-using System;
-using System.Linq;
-using System.Collections;
-using System.Collections.Generic;
-using System.Net;
-using System.IO;
-using Couchbase.Lite.Util;
-using Couchbase.Lite.Internal;
+
+using Couchbase.Lite;
+using NUnit.Framework;
 using Sharpen;
 
-namespace Couchbase.Lite {
+namespace Couchbase.Lite
+{
+	[TestFixture]
+	public class MiscTest : LiteTestCase
+	{
+		[SetUp]
+		protected override void SetUp ()
+		{
+			base.SetUp ();
+		}
 
-    public partial class DocumentChange
-    {
-        internal RevisionInternal AddedRevision { get; private set; }
+		[TearDown]
+		protected override void TearDown ()
+		{
+			base.TearDown ();
+		}
 
-        internal DocumentChange(RevisionInternal addedRevision, RevisionInternal winningRevision, bool isConflict, Uri sourceUrl)
-        {
-            AddedRevision = addedRevision;
-            WinningRevision = winningRevision;
-            IsConflict = isConflict;
-            SourceUrl = sourceUrl;
-        }
-    
-    #region Instance Members
-        //Properties
-        public String DocumentId { get { return AddedRevision.GetDocId(); } }
-
-        public String RevisionId { get { return AddedRevision.GetRevId(); } }
-
-        public Boolean IsCurrentRevision { get { return WinningRevision != null && WinningRevision.GetRevId().Equals(AddedRevision.GetRevId()); } }
-
-        public RevisionInternal WinningRevision { get; private set; }
-
-        public Boolean IsConflict { get; private set; }
-
-        public Uri SourceUrl { get; private set; }
-
-    #endregion
-
-    }
-
+        [Test]
+		public void TestUnquoteString()
+		{
+			string testString = "attachment; filename=\"attach\"";
+			string expected = "attachment; filename=attach";
+			string result = Misc.UnquoteString(testString);
+			Assert.AreEqual(expected, result);
+		}
+	}
 }

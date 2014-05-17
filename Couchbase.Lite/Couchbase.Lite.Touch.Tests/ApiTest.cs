@@ -62,18 +62,17 @@ namespace Couchbase.Lite
 	[TestFixture]
     public class ApiTest : LiteTestCase
 	{
-		[TestFixtureSetUp]
+		[SetUp]
 		protected override void SetUp ()
 		{
 			base.SetUp ();
 		}
 
-		[TestFixtureTearDown]
+		[TearDown]
 		protected override void TearDown ()
 		{
 			base.TearDown ();
 		}
-
 
         public static Task CreateDocumentsAsync(Database db, int n)
 		{

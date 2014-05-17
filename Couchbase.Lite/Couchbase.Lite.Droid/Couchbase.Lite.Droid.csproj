@@ -250,6 +250,7 @@
     <Compile Include="src\Replication.cs" />
     <Compile Include="src\Revision.cs" />
     <Compile Include="src\View.cs" />
+    <Compile Include="src\Store\RevIdCollator.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
