@@ -1,10 +1,14 @@
 couchbase-lite-net
 ==================
 
-Native API port of Couchbase Lite for Android to C#.
+Native API port of Couchbase Lite for Android to C#.  
+This branch is experimental implementation in iOS/Android, not tested well especially in replication with server function.
 
 Running Tests
 =============
+
+.Net version:
+-------------
 
 The replication unit tests currently require a running
 instance of `sync_gateway`. Prior to running the
@@ -16,6 +20,15 @@ command:
 
 Windows:
    {TBD}
+   
+Mobile version (iOS / Android)
+------------------------------
+
+Run Couchabase.Lite.{Touch/Droid}.Tests projects in your device.  
+Replication test is not added in testcase now.
+
+Current test is success if you run it as "Run Everything", but sometimes fail if you run each test only.  
+I'm now analyzing why it is, but I think it is not problem of library but problem of NUnit TestRunner.
 
 Porting Code
 ============
@@ -40,7 +53,7 @@ The upstream Java project is:
 The current codebase is based on commit:
 	03895431fe71ed9ccd74c9cbc11ad88c8ae65602
 
-Android Library
-===============
+Android sample
+==============
 
 Port modified to be used in Android Projects. A Couchbase Lite for Xam.Android sample can be found here: https://github.com/SotoiGhost/CouchXamAndroidSample
