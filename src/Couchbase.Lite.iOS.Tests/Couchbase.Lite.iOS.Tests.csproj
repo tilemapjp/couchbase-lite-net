@@ -89,24 +89,124 @@
     <Reference Include="System.Core" />
     <Reference Include="monotouch" />
     <Reference Include="MonoTouch.NUnitLite" />
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>..\packages\Newtonsoft.Json.6.0.3\lib\portable-net40+sl4+wp7+win8\Newtonsoft.Json.dll</HintPath>
-    </Reference>
     <Reference Include="System.Data" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Web.Services" />
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.3\lib\portable-net40+sl4+wp7+win8\Newtonsoft.Json.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />
+    <Folder Include="Util\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
     <None Include="Entitlements.plist" />
     <None Include="packages.config" />
+    <None Include="..\Couchbase.Lite.Tests.Shared\Couchbase.Lite.Tests.Shared.shproj">
+      <Link>Couchbase.Lite.Tests.Shared.shproj</Link>
+    </None>
+    <None Include="..\Couchbase.Lite.Tests.Shared\Couchbase.Lite.Tests.Shared.projitems">
+      <Link>Couchbase.Lite.Tests.Shared.projitems</Link>
+    </None>
+    <None Include="..\Couchbase.Lite.Tests.Shared\RouterTest.cs">
+      <Link>RouterTest.cs</Link>
+    </None>
+    <None Include="..\Couchbase.Lite.Tests.Shared\ChangeTracker.cs">
+      <Link>ChangeTracker.cs</Link>
+    </None>
+    <None Include="..\Couchbase.Lite.Tests.Shared\PersonaAuthorizer.cs">
+      <Link>PersonaAuthorizer.cs</Link>
+    </None>
+    <None Include="..\Couchbase.Lite.Tests.Shared\MultipartReaderTest.cs">
+      <Link>MultipartReaderTest.cs</Link>
+    </None>
+    <None Include="..\Couchbase.Lite.Tests.Shared\ChangeTrackerTest.cs">
+      <Link>ChangeTrackerTest.cs</Link>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Main.cs" />
     <Compile Include="UnitTestAppDelegate.cs" />
+    <Compile Include="..\Couchbase.Lite.Tests.Shared\ViewsTest.cs">
+      <Link>ViewsTest.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Tests.Shared\ValidationsTest.cs">
+      <Link>ValidationsTest.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Tests.Shared\SequenceMapTest.cs">
+      <Link>SequenceMapTest.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Tests.Shared\RevTreeTest.cs">
+      <Link>RevTreeTest.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Tests.Shared\RevisionsTest.cs">
+      <Link>RevisionsTest.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Tests.Shared\ReplicationTest.cs">
+      <Link>ReplicationTest.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Tests.Shared\MiscTest.cs">
+      <Link>MiscTest.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Tests.Shared\ManagerTest.cs">
+      <Link>ManagerTest.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Tests.Shared\LocalDocsTest.cs">
+      <Link>LocalDocsTest.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Tests.Shared\LiteTestCase.cs">
+      <Link>LiteTestCase.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Tests.Shared\FakeHttpWebResponse.cs">
+      <Link>FakeHttpWebResponse.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Tests.Shared\DocumentTest.cs">
+      <Link>DocumentTest.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Tests.Shared\DatabaseTest.cs">
+      <Link>DatabaseTest.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Tests.Shared\CustomizableMockHttpClientHandler.cs">
+      <Link>CustomizableMockHttpClientHandler.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Tests.Shared\CRUDOperationsTest.cs">
+      <Link>CRUDOperationsTest.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Tests.Shared\CollationTest.cs">
+      <Link>CollationTest.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Tests.Shared\ChangesTest.cs">
+      <Link>ChangesTest.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Tests.Shared\BlobStoreWriterTest.cs">
+      <Link>BlobStoreWriterTest.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Tests.Shared\Base64Test.cs">
+      <Link>Base64Test.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Tests.Shared\AuthTest.cs">
+      <Link>AuthTest.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Tests.Shared\AttachmentsTest.cs">
+      <Link>AttachmentsTest.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Tests.Shared\ApiTest.cs">
+      <Link>ApiTest.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Tests.Shared\Util\AlwaysFailingClientFactory.cs">
+      <Link>Util\AlwaysFailingClientFactory.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Tests.Shared\Util\CollationTest.cs">
+      <Link>Util\CollationTest.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Tests.Shared\Util\ExtensionMethods.cs">
+      <Link>Util\ExtensionMethods.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Tests.Shared\Util\FailEveryRequestHandler.cs">
+      <Link>Util\FailEveryRequestHandler.cs</Link>
+    </Compile>
   </ItemGroup>
   <Import Project="..\Couchbase.Lite.Tests.Shared\Couchbase.Lite.Tests.Shared.projitems" Label="Shared" Condition="Exists('..\Couchbase.Lite.Tests.Shared\Couchbase.Lite.Tests.Shared.projitems')" />
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

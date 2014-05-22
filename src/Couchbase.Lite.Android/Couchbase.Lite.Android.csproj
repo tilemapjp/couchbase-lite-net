@@ -42,15 +42,600 @@
     <Reference Include="System.Core" />
     <Reference Include="Mono.Android" />
     <Reference Include="System.Net.Http" />
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>..\packages\Newtonsoft.Json.6.0.3\lib\portable-net40+sl4+wp7+win8\Newtonsoft.Json.dll</HintPath>
-    </Reference>
     <Reference Include="Mono.Data.Sqlite" />
     <Reference Include="System.Data" />
     <Reference Include="System.Web.Services" />
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.3\lib\portable-net40+sl4+wp7+win8\Newtonsoft.Json.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Resources\Resource.designer.cs" />
+    <Compile Include="..\Couchbase.Lite.Shared\View.cs">
+      <Link>View.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Shared\Revision.cs">
+      <Link>Revision.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Shared\Replication.cs">
+      <Link>Replication.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Shared\Query.cs">
+      <Link>Query.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Shared\Manager.cs">
+      <Link>Manager.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Shared\Document.cs">
+      <Link>Document.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Shared\Database.cs">
+      <Link>Database.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Shared\Attachment.cs">
+      <Link>Attachment.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Shared\Util\DefaultAuthHandler.cs">
+      <Link>Util\DefaultAuthHandler.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Shared\Util\ExtensionMethods.cs">
+      <Link>Util\ExtensionMethods.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Shared\Util\FileDirUtils.cs">
+      <Link>Util\FileDirUtils.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Shared\Util\IHttpClientFactory.cs">
+      <Link>Util\IHttpClientFactory.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Shared\Util\ILogger.cs">
+      <Link>Util\ILogger.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Shared\Util\Log.cs">
+      <Link>Util\Log.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Shared\Util\LoggerFactory.cs">
+      <Link>Util\LoggerFactory.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Shared\Util\LruCache.cs">
+      <Link>Util\LruCache.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Shared\Util\Misc.cs">
+      <Link>Util\Misc.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Shared\Util\ObjectWriter.cs">
+      <Link>Util\ObjectWriter.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Shared\Util\Range.cs">
+      <Link>Util\Range.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Shared\Util\RemoteRequestCompletionBlock.cs">
+      <Link>Util\RemoteRequestCompletionBlock.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Shared\Util\SequenceMap.cs">
+      <Link>Util\SequenceMap.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Shared\Util\StringUtils.cs">
+      <Link>Util\StringUtils.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Shared\Util\SystemLogger.cs">
+      <Link>Util\SystemLogger.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Shared\Util\URIUtils.cs">
+      <Link>Util\URIUtils.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Shared\Store\BlobKey.cs">
+      <Link>Store\BlobKey.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Shared\Store\BlobStore.cs">
+      <Link>Store\BlobStore.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Shared\Store\BlobStoreWriter.cs">
+      <Link>Store\BlobStoreWriter.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Shared\Store\ConflictResolutionStrategy.cs">
+      <Link>Store\ConflictResolutionStrategy.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Shared\Store\ContentValues.cs">
+      <Link>Store\ContentValues.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Shared\Store\CouchbaseSqliteCollationFunctions.cs">
+      <Link>Store\CouchbaseSqliteCollationFunctions.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Shared\Store\Cursor.cs">
+      <Link>Store\Cursor.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Shared\Store\JsonCollator.cs">
+      <Link>Store\JsonCollator.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Shared\Store\MonoSQLiteStorageEngine.cs">
+      <Link>Store\MonoSQLiteStorageEngine.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Shared\Store\RevIdCollator.cs">
+      <Link>Store\RevIdCollator.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Shared\Store\SQLException.cs">
+      <Link>Store\SQLException.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Shared\Store\SQLiteStorageEngine.cs">
+      <Link>Store\SQLiteStorageEngine.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Shared\Store\SQLiteStorageEngineFactory.cs">
+      <Link>Store\SQLiteStorageEngineFactory.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Shared\Store\Status.cs">
+      <Link>Store\Status.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Shared\Sharpen\AList.cs">
+      <Link>Sharpen\AList.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Shared\Sharpen\AbstractCollection.cs">
+      <Link>Sharpen\AbstractCollection.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Shared\Sharpen\AbstractList.cs">
+      <Link>Sharpen\AbstractList.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Shared\Sharpen\AbstractMap.cs">
+      <Link>Sharpen\AbstractMap.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Shared\Sharpen\AbstractSet.cs">
+      <Link>Sharpen\AbstractSet.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Shared\Sharpen\AccessController.cs">
+      <Link>Sharpen\AccessController.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Shared\Sharpen\Arrays.cs">
+      <Link>Sharpen\Arrays.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Shared\Sharpen\AtomicBoolean.cs">
+      <Link>Sharpen\AtomicBoolean.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Shared\Sharpen\AtomicInteger.cs">
+      <Link>Sharpen\AtomicInteger.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Shared\Sharpen\AtomicLong.cs">
+      <Link>Sharpen\AtomicLong.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Shared\Sharpen\AtomicReference.cs">
+      <Link>Sharpen\AtomicReference.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Shared\Sharpen\AtomicReferenceArray.cs">
+      <Link>Sharpen\AtomicReferenceArray.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Shared\Sharpen\BitSet.cs">
+      <Link>Sharpen\BitSet.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Shared\Sharpen\BufferedInputStream.cs">
+      <Link>Sharpen\BufferedInputStream.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Shared\Sharpen\BufferedOutputStream.cs">
+      <Link>Sharpen\BufferedOutputStream.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Shared\Sharpen\BufferedReader.cs">
+      <Link>Sharpen\BufferedReader.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Shared\Sharpen\BufferedWriter.cs">
+      <Link>Sharpen\BufferedWriter.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Shared\Sharpen\ByteArrayInputStream.cs">
+      <Link>Sharpen\ByteArrayInputStream.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Shared\Sharpen\ByteArrayOutputStream.cs">
+      <Link>Sharpen\ByteArrayOutputStream.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Shared\Sharpen\ByteBuffer.cs">
+      <Link>Sharpen\ByteBuffer.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Shared\Sharpen\ByteOrder.cs">
+      <Link>Sharpen\ByteOrder.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Shared\Sharpen\CRC32.cs">
+      <Link>Sharpen\CRC32.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Shared\Sharpen\Callable.cs">
+      <Link>Sharpen\Callable.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Shared\Sharpen\Channels.cs">
+      <Link>Sharpen\Channels.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Shared\Sharpen\CharBuffer.cs">
+      <Link>Sharpen\CharBuffer.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Shared\Sharpen\CharSequence.cs">
+      <Link>Sharpen\CharSequence.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Shared\Sharpen\CharUtils.cs">
+      <Link>Sharpen\CharUtils.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Shared\Sharpen\CharsetDecoder.cs">
+      <Link>Sharpen\CharsetDecoder.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Shared\Sharpen\CharsetEncoder.cs">
+      <Link>Sharpen\CharsetEncoder.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Shared\Sharpen\CodingErrorAction.cs">
+      <Link>Sharpen\CodingErrorAction.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Shared\Sharpen\Collections.cs">
+      <Link>Sharpen\Collections.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Shared\Sharpen\ConcurrentHashMap.cs">
+      <Link>Sharpen\ConcurrentHashMap.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Shared\Sharpen\ConcurrentMap.cs">
+      <Link>Sharpen\ConcurrentMap.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Shared\Sharpen\CopyOnWriteArrayList.cs">
+      <Link>Sharpen\CopyOnWriteArrayList.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Shared\Sharpen\CountDownLatch.cs">
+      <Link>Sharpen\CountDownLatch.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Shared\Sharpen\CyclicBarrier.cs">
+      <Link>Sharpen\CyclicBarrier.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Shared\Sharpen\DataConverter.cs">
+      <Link>Sharpen\DataConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Shared\Sharpen\DateFormat.cs">
+      <Link>Sharpen\DateFormat.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Shared\Sharpen\DigestInputStream.cs">
+      <Link>Sharpen\DigestInputStream.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Shared\Sharpen\DigestOutputStream.cs">
+      <Link>Sharpen\DigestOutputStream.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Shared\Sharpen\EnumSet.cs">
+      <Link>Sharpen\EnumSet.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Shared\Sharpen\EnumerableWrapper.cs">
+      <Link>Sharpen\EnumerableWrapper.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Shared\Sharpen\EnumeratorWrapper.cs">
+      <Link>Sharpen\EnumeratorWrapper.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Shared\Sharpen\Exceptions.cs">
+      <Link>Sharpen\Exceptions.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Shared\Sharpen\Executor.cs">
+      <Link>Sharpen\Executor.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Shared\Sharpen\ExecutorService.cs">
+      <Link>Sharpen\ExecutorService.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Shared\Sharpen\Executors.cs">
+      <Link>Sharpen\Executors.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Shared\Sharpen\Extensions.cs">
+      <Link>Sharpen\Extensions.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Shared\Sharpen\FileChannel.cs">
+      <Link>Sharpen\FileChannel.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Shared\Sharpen\FileHelper.cs">
+      <Link>Sharpen\FileHelper.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Shared\Sharpen\FileInputStream.cs">
+      <Link>Sharpen\FileInputStream.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Shared\Sharpen\FileLock.cs">
+      <Link>Sharpen\FileLock.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Shared\Sharpen\FileOutputStream.cs">
+      <Link>Sharpen\FileOutputStream.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Shared\Sharpen\FilePath.cs">
+      <Link>Sharpen\FilePath.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Shared\Sharpen\FileReader.cs">
+      <Link>Sharpen\FileReader.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Shared\Sharpen\FileWriter.cs">
+      <Link>Sharpen\FileWriter.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Shared\Sharpen\FilenameFilter.cs">
+      <Link>Sharpen\FilenameFilter.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Shared\Sharpen\FilterInputStream.cs">
+      <Link>Sharpen\FilterInputStream.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Shared\Sharpen\FilterOutputStream.cs">
+      <Link>Sharpen\FilterOutputStream.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Shared\Sharpen\Future.cs">
+      <Link>Sharpen\Future.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Shared\Sharpen\GZIPInputStream.cs">
+      <Link>Sharpen\GZIPInputStream.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Shared\Sharpen\GZIPOutputStream.cs">
+      <Link>Sharpen\GZIPOutputStream.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Shared\Sharpen\HttpURLConnection.cs">
+      <Link>Sharpen\HttpURLConnection.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Shared\Sharpen\InheritableThreadLocal.cs">
+      <Link>Sharpen\InheritableThreadLocal.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Shared\Sharpen\InputStream.cs">
+      <Link>Sharpen\InputStream.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Shared\Sharpen\InputStreamReader.cs">
+      <Link>Sharpen\InputStreamReader.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Shared\Sharpen\Iterable.cs">
+      <Link>Sharpen\Iterable.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Shared\Sharpen\Iterator.cs">
+      <Link>Sharpen\Iterator.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Shared\Sharpen\JavaCalendar.cs">
+      <Link>Sharpen\JavaCalendar.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Shared\Sharpen\LinkageError.cs">
+      <Link>Sharpen\LinkageError.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Shared\Sharpen\LinkedHashMap.cs">
+      <Link>Sharpen\LinkedHashMap.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Shared\Sharpen\LinkedHashSet.cs">
+      <Link>Sharpen\LinkedHashSet.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Shared\Sharpen\ListIterator.cs">
+      <Link>Sharpen\ListIterator.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Shared\Sharpen\MappedByteBuffer.cs">
+      <Link>Sharpen\MappedByteBuffer.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Shared\Sharpen\Matcher.cs">
+      <Link>Sharpen\Matcher.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Shared\Sharpen\MessageDigest.cs">
+      <Link>Sharpen\MessageDigest.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Shared\Sharpen\MessageFormat.cs">
+      <Link>Sharpen\MessageFormat.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Shared\Sharpen\ObjectInputStream.cs">
+      <Link>Sharpen\ObjectInputStream.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Shared\Sharpen\ObjectOutputStream.cs">
+      <Link>Sharpen\ObjectOutputStream.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Shared\Sharpen\OutputStream.cs">
+      <Link>Sharpen\OutputStream.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Shared\Sharpen\OutputStreamWriter.cs">
+      <Link>Sharpen\OutputStreamWriter.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Shared\Sharpen\PasswordAuthentication.cs">
+      <Link>Sharpen\PasswordAuthentication.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Shared\Sharpen\Pattern.cs">
+      <Link>Sharpen\Pattern.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Shared\Sharpen\PipedInputStream.cs">
+      <Link>Sharpen\PipedInputStream.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Shared\Sharpen\PipedOutputStream.cs">
+      <Link>Sharpen\PipedOutputStream.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Shared\Sharpen\PrintWriter.cs">
+      <Link>Sharpen\PrintWriter.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Shared\Sharpen\PrivilegedAction.cs">
+      <Link>Sharpen\PrivilegedAction.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Shared\Sharpen\Process.cs">
+      <Link>Sharpen\Process.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Shared\Sharpen\Proxy.cs">
+      <Link>Sharpen\Proxy.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Shared\Sharpen\ProxySelector.cs">
+      <Link>Sharpen\ProxySelector.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Shared\Sharpen\RandomAccessFile.cs">
+      <Link>Sharpen\RandomAccessFile.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Shared\Sharpen\ReentrantLock.cs">
+      <Link>Sharpen\ReentrantLock.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Shared\Sharpen\Reference.cs">
+      <Link>Sharpen\Reference.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Shared\Sharpen\ReferenceQueue.cs">
+      <Link>Sharpen\ReferenceQueue.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Shared\Sharpen\ResourceBundle.cs">
+      <Link>Sharpen\ResourceBundle.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Shared\Sharpen\Runnable.cs">
+      <Link>Sharpen\Runnable.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Shared\Sharpen\Runtime.cs">
+      <Link>Sharpen\Runtime.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Shared\Sharpen\SSLContext.cs">
+      <Link>Sharpen\SSLContext.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Shared\Sharpen\ScheduledExecutorService.cs">
+      <Link>Sharpen\ScheduledExecutorService.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Shared\Sharpen\ScheduledThreadPoolExecutor.cs">
+      <Link>Sharpen\ScheduledThreadPoolExecutor.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Shared\Sharpen\SimpleDateFormat.cs">
+      <Link>Sharpen\SimpleDateFormat.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Shared\Sharpen\SingletonList.cs">
+      <Link>Sharpen\SingletonList.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Shared\Sharpen\SoftReference.cs">
+      <Link>Sharpen\SoftReference.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Shared\Sharpen\StackOverflowError.cs">
+      <Link>Sharpen\StackOverflowError.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Shared\Sharpen\String.cs">
+      <Link>Sharpen\String.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Shared\Sharpen\StringTokenizer.cs">
+      <Link>Sharpen\StringTokenizer.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Shared\Sharpen\SynchronizedList.cs">
+      <Link>Sharpen\SynchronizedList.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Shared\Sharpen\Thread.cs">
+      <Link>Sharpen\Thread.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Shared\Sharpen\ThreadFactory.cs">
+      <Link>Sharpen\ThreadFactory.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Shared\Sharpen\ThreadPoolExecutor.cs">
+      <Link>Sharpen\ThreadPoolExecutor.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Shared\Sharpen\TimeUnit.cs">
+      <Link>Sharpen\TimeUnit.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Shared\Sharpen\TreeSet.cs">
+      <Link>Sharpen\TreeSet.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Shared\Sharpen\TrustManager.cs">
+      <Link>Sharpen\TrustManager.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Shared\Sharpen\URLEncoder.cs">
+      <Link>Sharpen\URLEncoder.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Shared\Sharpen\Uri.cs">
+      <Link>Sharpen\Uri.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Shared\Sharpen\WeakReference.cs">
+      <Link>Sharpen\WeakReference.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Shared\Sharpen\WrappedSystemStream.cs">
+      <Link>Sharpen\WrappedSystemStream.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Shared\Sharpen\X509Certificate.cs">
+      <Link>Sharpen\X509Certificate.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Shared\Sharpen\X509TrustManager.cs">
+      <Link>Sharpen\X509TrustManager.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Shared\Revisions\ChangesOptions.cs">
+      <Link>Revisions\ChangesOptions.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Shared\Revisions\RevisionInternal.cs">
+      <Link>Revisions\RevisionInternal.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Shared\Revisions\RevisionList.cs">
+      <Link>Revisions\RevisionList.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Shared\Revisions\SavedRevision.cs">
+      <Link>Revisions\SavedRevision.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Shared\Revisions\UnsavedRevision.cs">
+      <Link>Revisions\UnsavedRevision.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Shared\Replication\BatchProcessor.cs">
+      <Link>Replication\BatchProcessor.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Shared\Replication\Batcher.cs">
+      <Link>Replication\Batcher.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Shared\Replication\ChangeTracker.cs">
+      <Link>Replication\ChangeTracker.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Shared\Replication\ChangeTrackerBackoff.cs">
+      <Link>Replication\ChangeTrackerBackoff.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Shared\Replication\ChangeTrackerClient.cs">
+      <Link>Replication\ChangeTrackerClient.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Shared\Replication\CouchbaseLiteHttpClientFactory.cs">
+      <Link>Replication\CouchbaseLiteHttpClientFactory.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Shared\Replication\HttpResponseException.cs">
+      <Link>Replication\HttpResponseException.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Shared\Replication\MultipartDocumentReader.cs">
+      <Link>Replication\MultipartDocumentReader.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Shared\Replication\MultipartReader.cs">
+      <Link>Replication\MultipartReader.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Shared\Replication\MultipartReaderDelegate.cs">
+      <Link>Replication\MultipartReaderDelegate.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Shared\Replication\PulledRevision.cs">
+      <Link>Replication\PulledRevision.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Shared\Replication\Puller.cs">
+      <Link>Replication\Puller.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Shared\Replication\Pusher.cs">
+      <Link>Replication\Pusher.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Shared\Replication\ScheduledFuture.cs">
+      <Link>Replication\ScheduledFuture.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Shared\Query\LiveQuery.cs">
+      <Link>Query\LiveQuery.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Shared\Query\QueryCompletedEventArgs.cs">
+      <Link>Query\QueryCompletedEventArgs.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Shared\Query\QueryEnumerator.cs">
+      <Link>Query\QueryEnumerator.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Shared\Query\QueryOptions.cs">
+      <Link>Query\QueryOptions.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Shared\Query\QueryRow.cs">
+      <Link>Query\QueryRow.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Shared\Properties\AssemblyInfo.cs">
+      <Link>Properties\AssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Shared\Manager\ManagerOptions.cs">
+      <Link>Manager\ManagerOptions.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Shared\Extensions\SqliteExtensions.cs">
+      <Link>Extensions\SqliteExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Shared\Extensions\StreamExtensions.cs">
+      <Link>Extensions\StreamExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Shared\Exceptions\CouchbaseLiteException.cs">
+      <Link>Exceptions\CouchbaseLiteException.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Shared\Documents\AttachmentInternal.cs">
+      <Link>Documents\AttachmentInternal.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Shared\Documents\Body.cs">
+      <Link>Documents\Body.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Shared\Documents\DocumentChange.cs">
+      <Link>Documents\DocumentChange.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Shared\Documents\IValidationContext.cs">
+      <Link>Documents\IValidationContext.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Shared\Documents\TDContentOptions.cs">
+      <Link>Documents\TDContentOptions.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Shared\Documents\ValidationContext.cs">
+      <Link>Documents\ValidationContext.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Shared\Auth\Authorizer.cs">
+      <Link>Auth\Authorizer.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Shared\Auth\FacebookAuthorizer.cs">
+      <Link>Auth\FacebookAuthorizer.cs</Link>
+    </Compile>
+    <Compile Include="..\Couchbase.Lite.Shared\Auth\PersonaAuthorizer.cs">
+      <Link>Auth\PersonaAuthorizer.cs</Link>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -61,4 +646,18 @@
   </ItemGroup>
   <Import Project="..\Couchbase.Lite.Shared\Couchbase.Lite.Shared.projitems" Label="Shared" Condition="Exists('..\Couchbase.Lite.Shared\Couchbase.Lite.Shared.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
+  <ItemGroup>
+    <Folder Include="Util\" />
+    <Folder Include="Store\" />
+    <Folder Include="Sharpen\" />
+    <Folder Include="Revisions\" />
+    <Folder Include="Replication\" />
+    <Folder Include="Query\" />
+    <Folder Include="Properties\" />
+    <Folder Include="Manager\" />
+    <Folder Include="Extensions\" />
+    <Folder Include="Exceptions\" />
+    <Folder Include="Documents\" />
+    <Folder Include="Auth\" />
+  </ItemGroup>
 </Project>
