@@ -638,6 +638,9 @@
     <Compile Include="..\Couchbase.Lite.Shared\Auth\PersonaAuthorizer.cs">
       <Link>Auth\PersonaAuthorizer.cs</Link>
     </Compile>
+    <Compile Include="..\Couchbase.Lite.Shared\Util\SingleThreadTaskScheduler.cs">
+      <Link>Util\SingleThreadTaskScheduler.cs</Link>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />

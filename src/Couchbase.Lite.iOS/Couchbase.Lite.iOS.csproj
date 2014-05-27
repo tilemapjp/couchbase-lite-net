@@ -61,7 +61,6 @@
     <Folder Include="Auth\" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CBLUITableDelegate.cs" />
     <Compile Include="ReloadEventArgs.cs" />
     <Compile Include="CouchbaseTableSource.cs" />
     <Compile Include="CouchBaseTableDelegate.cs" />
@@ -650,15 +649,13 @@
     <Compile Include="..\Couchbase.Lite.Shared\Auth\PersonaAuthorizer.cs">
       <Link>Auth\PersonaAuthorizer.cs</Link>
     </Compile>
+    <Compile Include="..\Couchbase.Lite.Shared\Util\SingleThreadTaskScheduler.cs">
+      <Link>Util\SingleThreadTaskScheduler.cs</Link>
+    </Compile>
   </ItemGroup>
   <Import Project="..\Couchbase.Lite.Shared\Couchbase.Lite.Shared.projitems" Label="Shared" Condition="Exists('..\Couchbase.Lite.Shared\Couchbase.Lite.Shared.projitems')" />
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="CouchBaseTableDelegate.cs" />
-    <Compile Include="CouchbaseTableSource.cs" />
-    <Compile Include="ReloadEventArgs.cs" />
   </ItemGroup>
 </Project>
